@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load social_share %}
+{% load creative_tags %}
+
+{% block content %}
+
+            <div class="global-detail-texte">
+                <!-- ***********************************************************************  -->
+                <div>
+
+                    <div class="style-detail-texte">
+                        <h3>{{ detail_texts.title }} </h3>
+                        <p>{{ detail_texts.categorie }}  <span> <i class="fas fa-eye"></i>{{ detail_texts.view  }}</span></p>
+                        <p> <i class="fas fa-envelope-square"></i> {{ detail_texts.email }} </p>
+                        <h4><i class="fas fa-user"></i> {{ detail_texts.author }} </h4>
+                        <hr>
+
+                        <p class="text-makdown">{{ detail_texts.text|markdown }} </p>
+                        
+
+                        <hr>
+
+                        <h5><i class="far fa-user"></i> {{ detail_texts.publier_by }} </h5>
+                        <p style="font-size: 12px;">{{ detail_texts.date }} </p>
+                        <hr>
+                        
+
+                        <div class="media-none" style="display: none;">
+                            {% post_to_facebook object_or_url "Post to Facebook!" %}
+                            {% post_to_telegram "Nouvo teks: {{ detail_texts.text }}" %}
+                            {% post_to_whatsapp object_or_url "Share via WhatsApp" %}
+                        </div>
+                        <div class="social-media-share-style">
+                            <h5 style="font-size: 14px; opacity: 0.7;">Pataje teks sa :</h5>
+                            <span><a href="{{ facebook_url }}"><i class="fab fa-facebook"></i></a></span>
+                            <span><a href="{{ telegram_url }}"><i class="fab fa-telegram"></i></a></span>
+                            <span><a href=" {{ whatsapp_url }} "><i class="fab fa-whatsapp"></i></a></span>
+                        </div>
+                        
+                    </div>
+                    <br>
+                        <br>
+                        <br>
+
+
+                </div>
+
+                
+
+
+                <!-- *************************************************************************   -->
+
+                <div style="margin-left: 15px;">
+
+                    <div class="content-comments">
+                        
+                            {% for c in detail_texts.mycoms.all %}
+                            
+                             <div class="style-coms">
+                                 <h4>@{{ c.name }}</h4>
+                                 <p>{{c.body }}</p>
+                             </div>
+                            
+                             <hr>
+                             <br>
+                             {% empty %}
+                             <h4 style="color: var(--rouge);">Pa gen komante pou kounya</h4>
+
+                            {% endfor %}
+
+                        </div>
+                    
+                    <br>
+                    <h5>Kite yon komante </h5>
+                    <hr>
+                    <div class="content-coms">
+                        
+                        <form action="" method="post">
+                            {% csrf_token %}
+
+                            {{ form.as_p }}
+
+                            <button type="submit" id="btn-coms">voye</button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+{% endblock %}

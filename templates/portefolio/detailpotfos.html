@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <div class="div-portefolio-detail">
+        <h2 style="color: var(--rouge);" id="id-name">{{ potfo.name }} <strong> {{ potfo.eyes }} </strong></h2>
+        <hr>
+        <h3>Categorie(s)</h3>
+        {% for categ in potfo.categorie.all %}
+            <li class="font-size-item">{{ categ.name  }}</li>
+        {% endfor %}
+        <hr>
+        <h3>Contact</h3>
+        <p class="font-size-item">{{ potfo.mail}} </p>
+        <p class="font-size-item">{{ potfo.phone}}  </p>
+        <hr>
+            <p> {{ potfo.description }} </p>
+            <hr style="margin-bottom: 20px;">
+            <p>{{ potfo.experience }}</p>
+        <hr>
+        <p class="font-size-item"> {{ potfo.date_created}} </p>
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="center-login">
+    <h1>Konekte</h1>
+    {% if messages %}
+        {% for message in messages %}
+
+            <h4>{{ message }}</h4>
+
+        {% endfor %}
+
+    {% endif %}
+    <form action="{% url 'connexion' %}" method="POST">
+        {% csrf_token %}
+        <div class="design-input">
+        {{ myform.as_p }}
+        </div>
+        <div class="forget">
+            Vous avez oublie votre mot de passe
+        </div>
+        <button type="submit" id="btn-login">connexion</button>
+
+        <div class="signup-link">
+            Vous n'avez pas de compte ? <a href="{% url 'signup' %}">Incrivez-vous</a>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

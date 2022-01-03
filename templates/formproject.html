@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="formprojet">
+
+        <form action="{% url 'projects' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ myform.as_p }}
+            <br>
+            <button type="submit" class="btn-projet">Anrejistre</button>
+        </form>
+        <h4 style="margin-left: 10px">ki tip de enfomasyon ou ka mete nan potfolio ou pou'w ka fe moun enterese avew <a href="#">klike la</a></h4>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load social_share %}
+
+
+{% block content %}
+
+   <div class="one-content-arhives">
+
+
+            <div class="infos-archives">
+
+                        <h4>
+                            <a href="{% url 'firststep' %}" style="margin-bottom: 10px; color: var(--rouge); text-decoration: underline;">
+                                Paj akey</a>
+                        </h4>
+
+                    <div class="images_archives">
+                        {% if details.image_one %}
+                            <img src="{{ details.image_one.url }}" alt="">
+
+                        {% else %}
+
+                        {% endif %}
+                    </div>
+                    <h4> {{  details.name }}</h4>
+                    <p>Tel : {{ details.phone_one  }} </p>
+                    <p> Adres : {{ details.adress }} </p>
+
+
+            </div>
+
+
+            <div class="more-infos-archives">
+
+                <div>
+
+                    <p><strong>Adrès</strong> : {{ details.adress }} </p>
+                    <hr>
+                    <p><strong>Tel</strong> : {{ details.phone_one }} </p>
+                    <hr>
+                    <h5>Pataje</h5>
+                    <hr>
+
+                    <div class="media-none" style="display: none;">
+                        {% post_to_facebook object_or_url "Post to Facebook!" %}
+                        {% post_to_telegram "New Archive Place : {{ details.adress }}" %}
+                        {% post_to_whatsapp object_or_url "Share via WhatsApp" %}
+                    </div>
+                    <div class="social-media-share-style">
+                        <span><a href="{{ facebook_url }}"><i class="fab fa-facebook"></i></a></span>
+                        <span><a href="{{ telegram_url }}"><i class="fab fa-telegram"></i></a></span>
+                        <span><a href=" {{ whatsapp_url }} "><i class="fab fa-whatsapp"></i></a></span>
+                    </div>
+                </div>
+
+            </div>
+   </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+     <div class="global-design">
+    
+         <div>
+
+            <div style="width: 90%;">
+                <ul id="ul-categ">
+
+
+                    <li><a href="{% url 'alltextes' %}" class="active">Tout teks yo</a></li>
+                    {% for link in all_categs %}
+                    <li><a href="{% url 'bycateg' link.slug %}">{{ link.name }}</a></li>
+                    {% endfor %}
+                    
+                    
+                </ul>
+    
+            </div>
+
+            {% for i in all_posts %}
+
+                <div class="content-apercu">
+                    <h3><a href="{% url 'detailtextes' i.id %}">{{ i.title }}</a></h3>
+                    <h4>{{ i.author }} </h4>
+                    <p>{{ i.categorie }} </p>
+                    <hr style="margin-bottom: 26px;">
+                </div>
+
+            {% endfor %}
+
+                
+            <div id="paginator" style="margin-left: 20px;">
+                {% if all_posts.has_previous %}
+                <a href="{% url 'alltextes' %}?page={{all_posts.previous_page_number}}"> <i class="fas fa-angle-double-left"></i>paj avan </a>
+                {% endif %}
+
+                {% if all_posts.has_next %}
+                    <a href="{% url 'alltextes' %}?page={{all_posts.next_page_number}}">paj apre <i class="fas fa-angle-double-right"></i></a>
+                {% endif %}
+            </div>     
+
+         </div>
+
+
+            <!--  ******************************************************************  -->
+         <div class="more-read-text">
+             <h2>Les plus lus</h2>
+
+                {% for i in more_read %}
+
+                    <div class="more-read">
+                        <h4><a href="{% url 'detailtextes' i.id %}">{{ i.title }}</a> </h4>
+                        <p>{{ i.author }} </p>
+                    </div>
+
+                {% endfor %}
+                     
+             <div>
+
+             </div>
+
+         </div>
+     </div>
+
+{% endblock %}

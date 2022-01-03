@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="potfolio-user2-content">
+    
+
+        {% for potfo in mypotfolios %}
+
+
+            <div class="style-content-potfolio2">
+                <div  id="potfolio-info">
+                    <h1>{{ potfo.name }}</h1>
+                    <p class="opacity-style"> <i class="fas fa-envelope-square"></i> {{potfo.mail }} </p>
+                    <p class="opacity-style"> <i class="fas fa-phone"></i> {{potfo.phone }} </p>
+                </div>
+                <br>
+                
+
+               <div id="potfolio-content">
+                    <ul>
+                        {% for categ in potfo.categorie.all %}
+                            <li>
+                                kategori - {{categ.name }}
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                    <hr>
+
+                    <p id="text-potfolio"> {{potfo.description }} </p>
+                    <hr>
+                    {% if potfo.experience %}
+                        <h4 style="color: var(--rouge);">Eksperyans</h4>
+                        <p style="word-wrap: break-word;"> {{ potfo.experience }} </p>
+
+                    {% else %}
+
+                    {% endif %}
+                    <p class="opacity-style"> <i class="fas fa-table"></i> {{potfo.date_created }} </p>
+                    <hr>
+                    <br>
+
+                    <h5>Si ou vle efase Potfolio sa  <a href="{% url 'del' potfo.id %}">klike la</a> </h5>
+                
+
+               </div>
+
+
+
+            </div>
+
+            {% empty %}
+
+            <h3 style="color: var(--rouge);">Ou Poko ajoute Potfolio al fe sa kounya <br> <a href="{% url 'projects' %}">klike la</a></h3>
+            
+
+        {% endfor %}
+
+    
+</div>
+
+{% endblock %}

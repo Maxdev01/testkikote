@@ -1,0 +1,96 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load social_share %}
+
+{%block content %}
+
+    <div class="container-profil-potfolio">
+        <div class="content-profil">
+            <div class="content-image">
+        
+                    {% if myprofil.photo %}
+                        <img src="{{ myprofil.photo.url }}" alt="">
+
+                    {% else %}
+                        <img src="{% static 'kiko.png' %}" alt="">
+                    {% endif %}
+            </div>
+
+            
+            <div class="content-profil-text">
+                <h1 style="color: var(--rouge);"><span>{{ myprofil.name }}</span> <span>{{ myprofil.last_name}}</span></h1>
+                <p>{{ myprofil.description }}</p>
+                <br>
+                <hr>
+                    <p> <i class="fas fa-school"></i>    lekòl segondè - {{ myprofil.school }} </p>
+                    <p><i class="fas fa-university"></i> inivèsite - {{ myprofil.universite }} </p>
+                    <p> <i class="fas fa-graduation-cap"></i> lekòl pwofesyonèl - {{ myprofil.profesional_school }} </p>
+                    <p> <i class="fas fa-city"></i> kote ou fet - {{myprofil.ville}} </p>
+                <hr>
+                <p> <i class="fas fa-phone"></i> Telefon - {{ myprofil.phone }}</p>
+                <p> <i class="fas fa-envelope-square"></i> Imel - {{ myprofil.email }} </p>
+                <p> <i class="fas fa-eye"></i> {{ myprofil.view }}</p>
+            </div>
+
+        </div>
+
+        <div class="content-potfolio" id="margin-content">
+        
+
+            {% for potfolio in potfolio_list %}
+
+                <div id="head-potfolio">
+                    <h4>{{ potfolio.name }}</h4>
+                    <p> <i class="fas fa-envelope-square"></i> {{ potfolio.mail }}</p>
+                    <p> <i class="fas fa-phone"></i>  {{ potfolio.phone }} </p>
+                    <p> <i class="fas fa-eye"></i> {{ potfolio.eyes }} </p>
+                    {% if potfolio.status %}
+                        <p>maxime</p>
+                    {% else %}
+                        <h5>Portefolio Verifie <i class="fas fa-check-circle"></i></h5>
+                    {% endif %}
+                </div>
+
+                <div>
+                    <br>
+                    <ul>
+                        <h5>categorie(s)</h5>
+                        <hr>
+                        {% for categ in potfolio.categorie.all %}
+                        <li>{{ categ.name  }} </li>
+                        {% endfor %}
+                    </ul>
+
+                    <p> {{ potfolio.description }} </p>
+                    <br>
+                    <p> {{ potfolio.date_created }} </p>
+                    <br>
+
+
+                    <div class="media-none" style="display: none;">
+                        {% post_to_facebook object_or_url "Post to Facebook!" %}
+                        {% post_to_telegram "New Song: {{ potfolio.description }}" %}
+                        {% post_to_whatsapp object_or_url "Share via WhatsApp" %}
+                    </div>
+                    <div class="social-media-share-style">
+                        <p>Partager avec: </p>
+                        <span><a href="{{ facebook_url }}"><i class="fab fa-facebook"></i></a></span>
+                        <span><a href="{{ telegram_url }}"><i class="fab fa-telegram"></i></a></span>
+                        <span><a href=" {{ whatsapp_url }} "><i class="fab fa-whatsapp"></i></a></span>
+                    </div>
+                    <br>
+
+                </div>
+
+                {% empty %}
+
+                <h3>Itilizate sa pa gen potfolio </h3>
+
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}

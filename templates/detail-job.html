@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="detail-job">
+        <div class="design-detail">
+            <h1>{{ detail_work.title }}</h1>
+            <p>deskripsyon - {{ detail_work.description }} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo illum ullam dolore dicta vitae asperiores fugit ex nulla, tempora repudiandae, eligendi molestias animi ducimus modi obcaecati minima voluptas culpa hic?</p>
+            <em>vil - {{ detail_work.ville }}</em>
+            <hr>
+            <p class="e-mail">Imel - {{ detail_work.email }}</p>
+            <p>telefon - {{ detail_work.phone_1 }}</p>
+            {% if detail_work.phone_2 %}
+                <p> telefon - {{ detail_work.phone_2}}</p>
+            
+            {% else %}
+                <p>vid - </p>
+
+            {% endif %}
+
+            <p> yo we'l - {{ detail_work.view }} fwa </p>
+        </div>
+    </div>
+
+
+{% endblock %}

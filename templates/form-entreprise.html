@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="inputs-design2">
+        <h1>ranpli fòm sa a</h1>
+        <form action="{% url 'jobuser-2' %}" method="POST">
+            {% csrf_token %}
+            {{ myform.as_p}}
+
+            <br>
+            <button type="submit" class="btn-design-job">Anrejistre</button>
+
+            
+
+        </form>
+        <br>
+            <p>siw bezwen ed pou ranpli fòm sa <a href="#"> klike la</a></p>
+    </div>
+
+{% endblock %}

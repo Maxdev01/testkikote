@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div  class="inputs-design">
+        <h2>Modifye profil </h2>
+
+        <form action="{% url 'changeprofil' %}" method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+    
+            {{ formprofil.as_p }}
+    
+            <button type="submit" id="btn-profil">Enrejistre</button>
+    
+        </form>
+
+    </div>
+
+{% endblock %}

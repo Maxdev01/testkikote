@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'base-design.css' %}">
+    <link rel="stylesheet" href="{% static 'all-design1.css' %}">
+    <link rel="stylesheet" href="{% static 'second-design.css' %}">
+    <link rel="stylesheet" href="{% static 'design-projet.css' %}">
+    <link rel="stylesheet" href="{% static 'style-profil-potfolio.css' %}">
+    <link rel="stylesheet" href="{% static 'creativecss/style.css' %}">
+    <link rel="stylesheet" href="{% static 'company/companystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'portefolio/style.css' %}">
+    <title>Document</title>
+   
+    <script>
+        $(document).ready(function() {
+            $("#icon").click(function(){
+                $('ul').toggleClass("show");
+            });
+        });
+    </script>
+
+    <style>
+        *{
+            font-family: 'Quicksand';
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <nav>
+        <label for="" class="logo">KiKote</label>
+
+        <ul>
+            <li><a href="{% url 'firststep' %}" class="active">Accueil</a></li>
+            {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'signup' %}">Inscrivez-vous</a></li>
+            <li><a href="{% url 'connexion' %}">Se Connecter</a></li>
+            <li><a href="{% url 'viewsuser' %}">Utilisateur</a></li>
+            <li><a href="{% url 'alltextes' %}">Coin de Lecture</a></li>
+            <li><a href="">Sou nou</a></li>
+
+            {% else %}
+            <li><a href="{% url 'dash' %}">Tableau de bord</a></li>
+            <li><a href="{% url 'logout' %}">dekonekte</a></li>
+            <li><a href="{% url 'job' %}">Bay-Travay</a></li>
+
+
+            {% endif %}
+
+        </ul>
+        <label for="" id="icon">
+            <i class="fas fa-bars"></i>
+        </label>
+    </nav>
+
+    
+    <div>{% block content %}{% endblock %}</div>
+
+    <footer id="footer-design">
+        <div class="container-infos">
+                <h4>Nos Partenaires</h4>
+                <ul>
+                    <li>Focus Haiti Media</li>
+                    <li>Vakam sosyete</li>
+                    <li>Good Food</li>
+                </ul>
+                <br>
+                <p><a href="#">Politique et Confidentialite</a></p>
+                <p><a href="#">Apropos de nous</a></p>
+                <p><a href="#">Devenir notre partenaire</a></p>
+
+        </div>
+
+
+        <div class="container-infos">
+            <h4>Nos Ressources</h4>
+            <ul>
+                <li><a href="#">Evenement</a></li>
+                <li><a href="#">Services Marketing</a></li>
+            </ul>
+            <h4>Notre Communaute</h4>
+                <p>Akatsuki</p>
+                <p>Maxdev-Entreprise</p>
+                <p>kominote kripto</p>
+                <br>
+            <p>&copy; 2021 -2022 Kikoteayiti.com</p>
+
+        </div>
+    </footer>
+    
+</body>
+</html>

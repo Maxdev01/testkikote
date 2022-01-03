@@ -1,0 +1,1 @@
+web: gunicorn kikote.wsgi --log-file -

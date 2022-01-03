@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content%}
+
+    <!-- pou description projet an -->
+
+    <div class="section-global">
+
+        <div class="section-global-content">
+            <h1>Bienvenue </h1>
+            <h3>Kikote</h3>
+
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci deserunt, magnam 
+                iure reiciendis itaque, odit dolorum temporibus aperiam autem 
+                eligendi provident, rerum rem. Temporibus eaque ad ratione esse aperiam fuga?
+            </p>
+
+            <button class="btnpam btn01"><a href="#">A Propos</a></button>
+            <button class="btnpam btn02">Se Connecter</button>
+
+            <div class="social-media-content ">
+            
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+
+        </div>
+
+        <!-- <div class="global-immage">
+            <img src="{% static 'gps1.png' %}" alt="">
+
+        </div> -->
+
+    </div>
+
+
+
+
+    <!-- pou pati sevis entreprise lan -->
+
+    <div class="container-title">
+        <h3 id="title-container-design">Nos Services</h3>
+
+        <div class="container-service">
+            <div class="service-design">
+                <h1>Marketing</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+                     blanditiis unde corporis laboriosam, molestias ea deleniti voluptate id consequuntur
+                    explicabo earum mollitia perspiciatis ipsa. Error possimus fuga voluptatem porro hic.</p>
+            </div>
+
+
+            <div class="service-design">
+                <h1>kominoto kripto</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+                    blanditiis unde corporis laboriosam, molestias ea deleniti voluptate id consequuntur
+                   explicabo earum mollitia perspiciatis ipsa. Error possimus fuga voluptatem porro hic.</p>
+            </div>
+
+            <div class="service-design">
+                <h1>sevis referans</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+                    blanditiis unde corporis laboriosam, molestias ea deleniti voluptate id consequuntur
+                   explicabo earum mollitia perspiciatis ipsa. Error possimus fuga voluptatem porro hic.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- pou liste tout antrepriz yo net -->
+
+    <div class="global-company">
+        <div class="content-company">
+            <div>
+                    <h2>categorie(s)</h2>
+                <ul id="ul-categ-company">
+                    <li><a href="{% url 'firststep' %}">Tout</a></li>
+                    {% for i in categories %}
+                        <li><a href="{% url 'allcatego' i.slug %}">{{ i.name }} </a></li>
+                        {% empty%}
+                        <h5>Pas de categorie pour l'instant</h5>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+            {% for i in places %}
+                <div class="content-info-company">
+                    <div class="company-image">
+                        {% if i.image_one %}
+                        <img src="{{ i.image_one.url }}" alt="">
+    
+                        {% else %}
+    
+                        {% endif %}
+    
+                    </div>
+    
+                    <div class="company-info">
+                        <h4><a href="#"> {{ i.name }} </a></h4>
+                        <p class="opacity-info"> <i class="fas fa-map-marker-alt marg-icon"></i>{{ i.adress }} </p>
+                        <p class="opacity-info"> <i class="fas fa-phone-square-alt marg-icon"></i> (509) {{ i.phone_one }}</p>
+                        <p class="opacity-info"> <a href="{% url 'detay' i.id %}"><i class="fas fa-info-circle marg-icon"></i> Plis enfo</a></p>
+                    </div>
+
+                </div>
+
+                {% empty %}
+                <h5>Pas de contenu pour l'instant </h5>
+
+            {% endfor %}
+
+            <div id="paginator" style="margin-left: 20px;">
+                {% if places.has_previous %}
+                <a href="{% url 'firststep' %}?page={{places.previous_page_number}}"> <i class="fas fa-angle-double-left"></i>Avan ~~</a>
+                {% endif %}
+
+                {% if places.has_next %}
+                    <a href="{% url 'firststep' %}?page={{places.next_page_number}}"> ~~ Apre <i class="fas fa-angle-double-right"></i></a>
+                {% endif %}
+            </div>     
+
+        </div>
+
+        <!-- Pati pou entreprise yo -->
+
+        <div>
+            <div>
+                    <div>
+                        <h5>{{ most_visit.name }}</h5>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    <!--
+        fen pati antrepriz lan 
+        pati sa gen tout antrepriz ak tout kategori yo la
+    -->
+
+    <!-- <div class="container-one">
+        <div class="container-job">
+
+            
+                {% for item in work %}
+                
+                    <div class="design-job-content">
+                        <h2><a href="{% url 'details-work' item.id %}">{{ item.title }}</a></h2>
+                        <p> imel : {{ item.email }}</p>
+                        <p> dat-limit :{{ item.date_to }}</p>
+                    </div>
+                    
+
+                {% endfor %}
+            
+
+        </div>
+
+        <div class="container-job">
+
+            <div>
+                <h2>mwen se pati 2</h2>
+            </div>
+
+        </div>
+    </div> -->
+
+{% endblock %}

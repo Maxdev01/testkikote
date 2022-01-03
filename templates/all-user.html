@@ -1,0 +1,81 @@
+
+{% extends 'base.html'%}
+{% block content %}
+
+    <div>
+        <div class="container-user">
+
+                
+            <div class="user-container-design">
+                <h4><a href="{% url 'firststep' %}" style="color: rgb(36, 31, 31); text-decoration: underline;">Page Accueil</a></h4>
+                <div>
+                    <ul id="ul-user-categ">
+                        {% for i in allcategory %}
+                        <li><a href="#">{{ i.name }} </a></li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+
+
+                <h1 id="id-user">Nos utitilisateur(s) </h1>
+                
+                    <ul class="ul-user">
+                       {% for i in user %}
+
+                        <li><a href="{% url 'profiluser'   i.id %}"> 
+                            <i class="far fa-user"></i> {{ i.username }}</a></li>
+                       {% endfor %}
+                    </ul>
+
+                
+
+                <div id="paginator">
+                    {% if user.has_previous %}
+                    <a href="{% url 'viewsuser' %}?page={{user.previous_page_number}}" style="margin-right: 10px; margin-left: 10px;"> 
+                        <i class="fas fa-angle-double-left"></i>Avant </a>
+                    {% endif %}
+
+                    {% if user.has_next %}
+                        <a href="{% url 'viewsuser' %}?page={{user.next_page_number}}">Apre <i class="fas fa-angle-double-right"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="containerpub">
+
+                    
+
+                            <div class="search-potfo">
+                                <form>
+        
+                                    <input name="q" type="text" placeholder="Rechercher par nom | mot ">
+                                    <button class="btn-potfolio">Recherche</button>
+                                </form>
+                            </div>
+                        
+                            <div class="potfo-scroll">
+                                <p> Les Portefolios </p>
+                                <hr>
+                                {% for i in allportefolio %}
+                                    <div class="cl-potfolio-user">
+                                        <p> <a href="{% url 'detpotfos' i.id %}">{{  i.name }}</a></p>
+                                        <h5> <i class="far fa-user"></i>{{ i.user}}</h5>
+                                        <hr>
+                                        <h6> {{ i.date_created }} </h6>
+                                    </div>
+
+                                    {% empty %}
+                                    <p>Pas de portefolio pour l'instant </p>
+                                {% endfor %}
+                            </div>
+                    
+                
+                
+                    
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
