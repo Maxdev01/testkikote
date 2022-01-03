@@ -7,3 +7,4 @@ Django==3.1.7
 django-social-share==2.2.1
 psycopg2==2.9.2
 whitenoise==5.3.0
+pillow==7.0.0
