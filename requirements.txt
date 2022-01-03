@@ -4,4 +4,4 @@ dj-database-url==0.5.0
 Django==3.1.7
 django-social-share==2.2.1
 psycopg2==2.9.2
-hitenoise==5.3.0
+whitenoise==5.3.0
