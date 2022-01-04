@@ -11,7 +11,7 @@
                 <ul id="ul-categ">
 
 
-                    <li><a href="{% url 'alltextes' %}" class="active">Tout teks yo</a></li>
+                    <li><a href="{% url 'alltextes' %}" class="active">Nos Textes</a></li>
                     {% for link in all_categs %}
                     <li><a href="{% url 'bycateg' link.slug %}">{{ link.name }}</a></li>
                     {% endfor %}
@@ -35,11 +35,11 @@
                 
             <div id="paginator" style="margin-left: 20px;">
                 {% if all_posts.has_previous %}
-                <a href="{% url 'alltextes' %}?page={{all_posts.previous_page_number}}"> <i class="fas fa-angle-double-left"></i>paj avan </a>
+                <a href="{% url 'alltextes' %}?page={{all_posts.previous_page_number}}"> <i class="fas fa-angle-double-left"></i>Avant </a>
                 {% endif %}
 
                 {% if all_posts.has_next %}
-                    <a href="{% url 'alltextes' %}?page={{all_posts.next_page_number}}">paj apre <i class="fas fa-angle-double-right"></i></a>
+                    <a href="{% url 'alltextes' %}?page={{all_posts.next_page_number}}">Après<i class="fas fa-angle-double-right"></i></a>
                 {% endif %}
             </div>     
 
