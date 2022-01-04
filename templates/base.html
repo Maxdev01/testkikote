@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="{% static 'base-design.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'KiKote-Monogramme.png' %}" />
     <link rel="stylesheet" href="{% static 'all-design1.css' %}">
     <link rel="stylesheet" href="{% static 'second-design.css' %}">
     <link rel="stylesheet" href="{% static 'design-projet.css' %}">
@@ -19,9 +20,10 @@
     <link rel="stylesheet" href="{% static 'creativecss/style.css' %}">
     <link rel="stylesheet" href="{% static 'company/companystyle.css' %}">
     <link rel="stylesheet" href="{% static 'portefolio/style.css' %}">
-    <title>Document</title>
+    <title>KikoteAyiti - {% block title %} {% endblock %}</title>
    
     <script>
+
         $(document).ready(function() {
             $("#icon").click(function(){
                 $('ul').toggleClass("show");
@@ -53,8 +55,11 @@
 
             {% else %}
             <li><a href="{% url 'dash' %}">Tableau de bord</a></li>
-            <li><a href="{% url 'logout' %}">dekonekte</a></li>
-            <li><a href="{% url 'job' %}">Bay-Travay</a></li>
+            <li><a href="{% url 'logout' %}">Se deconnecter</a></li>
+            <li><a href="{% url 'job' %}">Besion de quelqu'un</a></li>
+            <li><a href="{% url 'viewsuser' %}">Utilisateur</a></li>
+            <li><a href="{% url 'alltextes' %}">Coin de Lecture</a></li>
+            
 
 
             {% endif %}
