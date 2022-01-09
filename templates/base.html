@@ -49,15 +49,15 @@
             {% if not request.user.is_authenticated %}
             <li><a href="{% url 'signup' %}">Inscrivez-vous</a></li>
             <li><a href="{% url 'connexion' %}">Se Connecter</a></li>
-            <li><a href="{% url 'viewsuser' %}">Utilisateur</a></li>
+            <li><a href="{% url 'viewsuser' %}">Utilisateur(s)</a></li>
             <li><a href="{% url 'alltextes' %}">Coin de Lecture</a></li>
-            <li><a href="">Sou nou</a></li>
+            <li><a href="">FAQ</a></li>
 
             {% else %}
             <li><a href="{% url 'dash' %}">Tableau de bord</a></li>
             <li><a href="{% url 'logout' %}">Se deconnecter</a></li>
             <li><a href="{% url 'job' %}">Besion de quelqu'un</a></li>
-            <li><a href="{% url 'viewsuser' %}">Utilisateur</a></li>
+            <li><a href="{% url 'viewsuser' %}">Utilisateur(s)</a></li>
             <li><a href="{% url 'alltextes' %}">Coin de Lecture</a></li>
             
 
@@ -83,7 +83,7 @@
                 </ul>
                 <br>
                 <p><a href="#">Politique et Confidentialite</a></p>
-                <p><a href="#">Apropos de nous</a></p>
+                <p><a href="#">FAQ</a></p>
                 <p><a href="#">Devenir notre partenaire</a></p>
 
         </div>
@@ -94,6 +94,7 @@
             <ul>
                 <li><a href="#">Evenement</a></li>
                 <li><a href="#">Services Marketing</a></li>
+                <li><a href="#">Formation</a></li>
             </ul>
             <h4>Notre Communaute</h4>
                 <p>Akatsuki</p>

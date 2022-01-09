@@ -7,6 +7,10 @@
 
     <div class="container-profil-potfolio">
         <div class="content-profil">
+            <p><a href="{% url 'firststep' %}">Page Accueil</a> <i class="fas fa-chevron-circle-right"></i>
+                 <a href="{% url 'viewsuser' %}">Utilisateur(s)</a>
+                <i class="fas fa-chevron-circle-right"></i>
+                 Profil & Portefolio</p>
             <div class="content-image">
         
                     {% if myprofil.photo %}

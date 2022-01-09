@@ -50,7 +50,7 @@ def koneksyon_user(request):
             return redirect("dash")
 
         else:
-            print("ou pa gen kont")
+            print("Vous n'avez pas de compte")
             myform = UserForm()
             context = {'myform': myform}
             messages.error(request, 'Verifiez vos informations')
@@ -65,3 +65,8 @@ def koneksyon_user(request):
 def dekonekte_user(request):
     logout(request)
     return redirect("firststep")
+
+
+#email = models.EmailField(max_length=100,null=True, blank=True)
+
+#email='kikote@gmail.com',

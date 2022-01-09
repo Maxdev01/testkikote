@@ -13,4 +13,15 @@ SECRET_KEY = 'jw8z072=h=&e=tlr4@5ddh^x4l4i$u54ezs(!#=9u0(e+$ma%j'
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['*'] 
+ALLOWED_HOSTS = ['*']
+
+
+
+import cloudinary #SETTINGS FOR CLOUD
+# MUST BE KEEP SECRET 
+
+cloudinary.config( 
+  cloud_name = "dxakskido", 
+  api_key = "754454969878574", 
+  api_secret = "hI7erATLQRKimfqgSh7u70S4zjg" 
+)
