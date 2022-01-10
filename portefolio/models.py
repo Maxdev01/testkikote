@@ -30,7 +30,7 @@ class Profile(models.Model):
     if not settings.DEBUG:
         photo = models.ImageField(upload_to="image_files", null=True, blank=True)
     else:
-        photo = models.CloudinaryField(upload_to="image_files", null=True, blank=True)
+        photo = CloudinaryField("image_files", null=True, blank=True)
 
     phone = models.CharField(max_length=15, null=True, blank=True)
     email = models.EmailField(max_length=100,null=True, blank=True)

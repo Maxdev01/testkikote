@@ -23,4 +23,5 @@ urlpatterns = [
     path('tout-potfolio-itilizate-sa', views.viewpotfolio, name='mypotfolios'),
 
     path('efase-yon-potfolio/<int:id>/', views.delpotfolio, name='del'),
+    path('apropos-de-nous', views.about, name='apropos'),
 ]

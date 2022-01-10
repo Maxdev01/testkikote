@@ -9,7 +9,7 @@ from .forms import CommentForm
 def ListTextes(request ,categ=None):
     # teks yo li plis yo 
     more_read = Texte.objects.all().order_by("-view")[:5]
-    all_posts = Texte.objects.filter(status=True)
+    all_posts = Texte.objects.filter(status=True).order_by("-date")
 
     all_categs = CreationCategories.objects.all()
 
@@ -30,7 +30,7 @@ def ListTextes(request ,categ=None):
     return render(request, 'creative/alltext.html', context)
 
 def DetailTexte(request, id=id):
-    detail_texts = get_object_or_404(Texte, id=id)
+    detail_texts = get_object_or_404(Texte, id=id).order_by("-date")
     detail_texts.view = detail_texts.view +1 
     detail_texts.save()
 

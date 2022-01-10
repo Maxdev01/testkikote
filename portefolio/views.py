@@ -16,7 +16,7 @@ def index(request, catego=None):
     most_visit = ArchivesPlace.objects.all().order_by("-views")[:5]
     work = JobPerso.objects.all()
     categories = PlaceCategory.objects.all()
-    places = ArchivesPlace.objects.all()
+    places = ArchivesPlace.objects.all().order_by("-created")
 
 
     if catego:
@@ -269,3 +269,7 @@ def delpotfolio(request, id=None):
 
     ProjectUser.objects.get(id=id).delete()
     return redirect('mypotfolios')
+
+
+def about(request):
+    return render(request, 'aboutus.html')

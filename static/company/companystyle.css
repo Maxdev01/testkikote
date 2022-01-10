@@ -132,10 +132,24 @@
 }
 
 .more-infos-archives
+
 {
     height: 150px;
     background: #F7F7F7;
     box-shadow: 3px 2px 3px 5px #F3F1F5;
+}
+
+.about-us 
+{
+    width: 97%;
+    box-shadow: 2px 2px 3px 2px #FFF8F3;
+    margin-left: 20px;
+}
+.about-us h2 
+{
+    color: var(--rouge);
+
+    font-size: 18px;
 }
 
 @media (max-width: 795px)
@@ -144,4 +158,6 @@
     .infos-archives{width: 95%; margin-left: 8px; padding: 0; margin-bottom: 20px;}
     .images_archives{width: 98%;}
     .more-infos-archives{height: auto;}
+
+    .about-us {width: 96%; margin-left: 2px;}
 }
