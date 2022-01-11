@@ -44,7 +44,7 @@ class JobEntrepriseForm(forms.ModelForm):
         fields = ('name', 'title', 'description', 'categorie', 'date_to', 'email', 'ville', 'adresse', 'phone_1', 'phone_2')
 
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'KI NON ANTREPRIZ OU AN ? *'}),
+            'name': forms.TextInput(attrs={'placeholder': 'LE NOM DE VOTRE ENTREPRISE ? *'}),
             'title': forms.TextInput(attrs={'placeholder': 'KI SA OU BEZWEN ? *'}),
             'description': forms.Textarea(attrs={'placeholder': 'EKSPLIKASYON AK DETAY *'}),
             'categorie': forms.SelectMultiple(attrs={'placeholder': ''}),
