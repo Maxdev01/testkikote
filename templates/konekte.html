@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% block title %} Se connecter {% endblock %}
 {% block content %}
 
 
-{% block title %} Se connecter {% endblock %}
+
 <div class="center-login">
     <h1>Connexion</h1>
     {% if messages %}
@@ -19,12 +20,14 @@
         {{ myform.as_p }}
         </div>
         <div class="forget">
-            Vous avez oublie votre mot de passe
+            
         </div>
         <button type="submit" id="btn-login">connexion</button>
 
         <div class="signup-link">
             Vous n'avez pas de compte ? <a href="{% url 'signup' %}">Incrivez-vous</a>
+            <hr>
+            <p><a href="#">Besion d'aide <i class="fas fa-question-circle"></i></a></p>
         </div>
     </form>
 

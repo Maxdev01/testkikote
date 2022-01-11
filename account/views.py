@@ -22,8 +22,8 @@ def enskripsyon(request):
             myuser = form.save(commit=False)
             myuser.set_password(data.get('password'))
             myuser.save()
-            profil_user_auto = Profile(user=myuser, name="vid", last_name='vid',phone='123456', email='kikote@gmail.com', description='vid',
-                                        school="vid", universite="vid", profesional_school="vid", ville="vid")
+            profil_user_auto = Profile(user=myuser, name="", last_name='',phone='', email='', description='',
+                                        school="", universite="", profesional_school="", ville="")
 
             profil_user_auto.save()
 

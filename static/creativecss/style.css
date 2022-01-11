@@ -1,7 +1,7 @@
 .global-design , .global-detail-texte
 {
     display: grid;
-    grid-template-columns: repeat(2, 700px 400px);
+    grid-template-columns: repeat(2, 850px 300px);
     
 }
 
@@ -121,7 +121,7 @@
 
 {
     height: auto;
-    width: 600px;
+    width: 800px;
     border: 2px solid black;
 
 
@@ -178,13 +178,13 @@
 .content-coms input
 {
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 3px;
  
 }
 .content-coms textarea{
-    width: 345px;
+    width: 285px;
     border-radius: 5px;
-    height: 80px;
+    height: 95px;
     resize: none;
     margin-top: 15px;
 

@@ -27,7 +27,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     last_name = models.CharField(max_length=100, null=True, blank=True)
     date = models.DateTimeField(default=timezone.now)
-    if not settings.DEBUG:
+    if settings.DEBUG:
         photo = models.ImageField(upload_to="image_files", null=True, blank=True)
     else:
         photo = CloudinaryField("image_files", null=True, blank=True)

@@ -7,6 +7,14 @@
             <div class="global-detail-texte">
                 <!-- ***********************************************************************  -->
                 <div>
+                            <h4> 
+                                <a href="{% url 'firststep' %}">Accueil</a>
+                                <i class="fas fa-chevron-circle-right"></i>
+                                <a href="{% url 'alltextes' %}">Precedente</a>
+                                <i class="fas fa-chevron-circle-right"></i>Lecture</h4>
+
+
+
 
                     <div class="style-detail-texte">
                         <h3>{{ detail_texts.title }} </h3>
@@ -31,7 +39,7 @@
                             {% post_to_whatsapp object_or_url "Share via WhatsApp" %}
                         </div>
                         <div class="social-media-share-style">
-                            <h5 style="font-size: 14px; opacity: 0.7;">Pataje teks sa :</h5>
+                            <h5 style="font-size: 14px; opacity: 0.7;">Partager  <i class="fas fa-share"></i></h5>
                             <span><a href="{{ facebook_url }}"><i class="fab fa-facebook"></i></a></span>
                             <span><a href="{{ telegram_url }}"><i class="fab fa-telegram"></i></a></span>
                             <span><a href=" {{ whatsapp_url }} "><i class="fab fa-whatsapp"></i></a></span>
@@ -64,14 +72,14 @@
                              <hr>
                              <br>
                              {% empty %}
-                             <h4 style="color: var(--rouge);">Pa gen komante pou kounya</h4>
+                             <h4 style="color: var(--rouge);">Pas de Commentaire Pour l'instant <i class="fas fa-comments"></i> </h4>
 
                             {% endfor %}
 
                         </div>
                     
                     <br>
-                    <h5>Kite yon komante </h5>
+                    <h5><i class="fas fa-comments"></i> Laisser un Commentaire  </h5>
                     <hr>
                     <div class="content-coms">
                         

@@ -13,16 +13,27 @@
 
                     <li><a href="{% url 'alltextes' %}" class="active">Nos Textes</a></li>
                     {% for link in all_categs %}
-                    <li><a href="{% url 'bycateg' link.slug %}">{{ link.name }}</a></li>
+                    <li><a href="{% url 'bycateg' link.slug %}">{{ link.name }} </a></li>
                     {% endfor %}
                     
                     
                 </ul>
     
             </div>
+            <h4><a href="{% url 'firststep' %}">Accueil</a></h4>
+
+
+            <div class="search-potfo">
+                <form>
+
+                    <input name="q" type="text" placeholder="Rechercher par Auteur | Titre">
+                    <button class="btn-potfolio">Recherche</button>
+                </form>
+            </div>
+
 
             {% for i in all_posts %}
-
+                    
                 <div class="content-apercu">
                     <h3><a href="{% url 'detailtextes' i.id %}">{{ i.title }}</a></h3>
                     <h4>{{ i.author }} </h4>
