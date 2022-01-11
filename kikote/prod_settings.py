@@ -17,8 +17,8 @@ ALLOWED_HOSTS = ['*']
 
 
 
-import cloudinary #SETTINGS FOR CLOUD
-# MUST BE KEEP SECRET 
+import cloudinary 
+ 
 
 cloudinary.config( 
   cloud_name = "dxakskido", 
