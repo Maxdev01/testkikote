@@ -10,6 +10,6 @@ class UserForm(forms.ModelForm):
         widgets = {
             'password' : forms.PasswordInput(attrs={'class': 'text', 'placeholder': 'Votre mot de passe'}),
             'date_joined' : forms.TextInput(attrs={'id': 'disp', 'class': 'disp-label'}),
-            'username' : forms.TextInput(attrs={'class': 'text'}),
+            'username' : forms.TextInput(attrs={'class': 'text', 'placeholder': 'Votre nom utilisateur * '}),
 
         }
