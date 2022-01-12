@@ -8,6 +8,6 @@ class CommentForm(forms.ModelForm):
         fields = ('name','body',)
 
         widgets = {
-            'name' : forms.TextInput(attrs={'id': 'inputnamecoms', 'placeholder':'Mete non ou '} ),
-            'body' : forms.Textarea(attrs={'id':'inputcomment', 'placeholder': 'comments'}),
+            'name' : forms.TextInput(attrs={'id': 'inputnamecoms', 'placeholder':'votre pseudo '} ),
+            'body' : forms.Textarea(attrs={'id':'inputcomment', 'placeholder': 'votre commenter'}),
         }
