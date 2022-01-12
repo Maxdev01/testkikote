@@ -17,11 +17,8 @@ ALLOWED_HOSTS = ['*']
 
 
 
-import cloudinary 
+
  
 
-cloudinary.config( 
-  cloud_name = "dxakskido", 
-  api_key = "754454969878574", 
-  api_secret = "hI7erATLQRKimfqgSh7u70S4zjg" 
-)
+
+
