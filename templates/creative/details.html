@@ -7,16 +7,33 @@
             <div class="global-detail-texte">
                 <!-- ***********************************************************************  -->
                 <div>
-                            <h4> 
-                                <a href="{% url 'firststep' %}">Accueil</a>
-                                <i class="fas fa-chevron-circle-right"></i>
-                                <a href="{% url 'alltextes' %}">Precedente</a>
-                                <i class="fas fa-chevron-circle-right"></i>Lecture</h4>
+                            
 
 
 
 
                     <div class="style-detail-texte">
+
+                        <div style="margin-bottom: 10px; margin-top: 8px;">
+
+                            <h4> 
+                                <a href="{% url 'firststep' %}">Accueil</a>
+                                <i class="fas fa-chevron-circle-right"></i>
+                                <a href="{% url 'alltextes' %}">Precedente</a>
+                                <i class="fas fa-chevron-circle-right"></i>Lecture
+                            </h4>
+
+                        </div>
+
+                        <div class="imagetext">
+                            {% if detail_texts.photo %}
+                                <img src="{{ detail_texts.photo.url }}" alt="">
+    
+                            {% else %}
+    
+                            {% endif %}
+                        </div>
+
                         <h3>{{ detail_texts.title }} </h3>
                         <p>{{ detail_texts.categorie }}  <span> <i class="fas fa-eye"></i>{{ detail_texts.view  }}</span></p>
                         <p> <i class="fas fa-envelope-square"></i> {{ detail_texts.email }} </p>
@@ -79,16 +96,17 @@
                         </div>
                     
                     <br>
-                    <h5><i class="fas fa-comments"></i> Laisser un Commentaire  </h5>
-                    <hr>
+                    
                     <div class="content-coms">
+                        <h5><i class="fas fa-comments"></i> Laisser un Commentaire  </h5>
+                        <hr>
                         
                         <form action="" method="post">
                             {% csrf_token %}
 
                             {{ form.as_p }}
 
-                            <button type="submit" id="btn-coms">voye</button>
+                            <button type="submit" id="btn-coms">Commenter</button>
 
                         </form>
                     </div>

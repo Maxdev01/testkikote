@@ -3,6 +3,9 @@ from django.utils import timezone
 from django.urls import reverse
 from django.contrib.auth.models import User 
 
+from cloudinary.models import CloudinaryField
+
+
 # Create your models here.
 
 
@@ -19,6 +22,10 @@ class Texte(models.Model):
     categorie = models.ForeignKey(CreationCategories, related_name="textes", on_delete=models.CASCADE)
     title = models.CharField(max_length=500)
     email = models.CharField(max_length=100, null=True, blank=True)
+    # photo = models.ImageField(upload_to="image_files", null=True, blank=True)
+
+    photo = CloudinaryField("image", null=True, blank=True)
+
     text = models.TextField()
     author = models.CharField(max_length=100)
     publier_by = models.CharField(max_length=100)

@@ -1,4 +1,4 @@
-.global-design , .global-detail-texte
+.global-design 
 {
     display: grid;
     grid-template-columns: repeat(2, 850px 300px);
@@ -15,6 +15,8 @@
     box-shadow: 2px 1px 1px 1px  rgb(187, 180, 180);
     
 }
+
+
 
 
 .content-apercu h3 {
@@ -76,6 +78,7 @@
 }
 
 
+
 .more-read {
     margin-bottom: 20px;
     box-shadow: 1px 2px 1px rgb(187, 180, 180);
@@ -121,8 +124,10 @@
 
 {
     height: auto;
-    width: 800px;
+    width: 960px;
     border: 2px solid black;
+    position: relative;
+    left: 15%;
 
 
 }
@@ -138,9 +143,14 @@
 
 .content-comments
 {
-    height: 250px;
+    height: auto;
+    width: 960px;
+    border: 2px solid black;
+    position: relative;
+    left: 14%;
     color: wheat;
     overflow-y: scroll;
+    
 }
 
 .style-coms
@@ -169,7 +179,11 @@
 
 .content-coms 
 {
-    margin-left: 9px;
+    height: auto;
+    width: 960px;
+    border: 2px solid black;
+    position: relative;
+    left: 14%;
 }
 .content-coms label{
     display: none;
@@ -178,11 +192,15 @@
 .content-coms input
 {
     margin-top: 10px;
+    width: 93%;
     border-radius: 3px;
+    margin-left: 8px;
  
 }
 .content-coms textarea{
-    width: 285px;
+    width: 94%;
+    margin-left: 8px;
+
     border-radius: 5px;
     height: 95px;
     resize: none;
@@ -232,6 +250,22 @@
     color: #fff;
 }
 
+
+.imagetext 
+{
+    width: 96%;
+    height: auto;
+    margin-right: 8px;
+    margin-left: 8px;
+    background: black;
+}
+
+.imagetext img {
+    width: 100%;
+    resize: horizontal;
+
+    height: auto;
+}
 
 @media (max-width: 765px)
 {
