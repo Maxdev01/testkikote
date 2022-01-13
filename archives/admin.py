@@ -12,7 +12,7 @@ class PlaceCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(ArchivesPlace)
 class ArchivesPlaceAdmin(admin.ModelAdmin):
-    list_display = ['name', 'categorie', 'created']
+    list_display = ['name', 'categorie', 'created', 'email']
     prepopulated_fields = {'slug': ('name','categorie','adress',)}
 
 
