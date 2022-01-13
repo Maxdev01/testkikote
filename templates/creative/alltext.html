@@ -20,7 +20,12 @@
                 </ul>
     
             </div>
-            <h4><a href="{% url 'firststep' %}">Accueil</a></h4>
+            <h4><a href="{% url 'firststep' %}">Accueil</a>
+                <i class="fas fa-chevron-circle-right"></i>
+                Contenu(s)
+            </h4>
+
+            <hr>
 
 
             <div class="search-potfo">
@@ -59,7 +64,7 @@
 
             <!--  ******************************************************************  -->
          <div class="more-read-text">
-             <h2>Les plus lus</h2>
+             <h2 style="font-size: 16px">les plus visités</h2>
 
                 {% for i in more_read %}
 
