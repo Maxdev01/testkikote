@@ -270,6 +270,10 @@
 @media (max-width: 765px)
 {
     .global-detail-texte{display: block;}
+    .content-coms{left: 0; width: 98%;}
+
+    .content-comments {left: 0; width: 98%;}
+    .style-detail-texte{left: 0;}
     #btn-coms {width: 95%;}
 
     .style-detail-texte{width: 97%;}
