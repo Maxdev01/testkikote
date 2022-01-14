@@ -267,9 +267,39 @@
     height: auto;
 }
 
+.center-poesie
+{
+    
+    text-align: center;
+    width: 420px;
+    font-family: cookie;
+    position: relative;
+    left: 26%;
+}
+
+.center-poesie hr
+{
+    margin-bottom: 20px;
+    opacity: 0.0;
+    
+}
+.saut-de-ligne hr
+{
+    margin-bottom: 25px;
+    opacity: 0.0;
+}
+
+.saut-de-ligne
+{
+    margin-left: 10px;
+}
+
 @media (max-width: 765px)
 {
+    
     .global-detail-texte{display: block;}
+    .center-poesie {width: 100%; left: 0;}
+
     .content-coms{left: 0; width: 98%;}
 
     .content-comments {left: 0; width: 98%;}
