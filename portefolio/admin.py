@@ -20,7 +20,7 @@ class JobPersoAdmin(admin.ModelAdmin):
 @admin.register(ProjectUser)
 class ProjectUserAdmin(admin.ModelAdmin):
 
-    list_display = ['name']
+    list_display = ['name', 'user', 'status', "date_created"]
     prepopulated_fields = {'slug': ('name',)}
 
 @admin.register(Category)

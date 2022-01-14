@@ -13,12 +13,12 @@ class CreationCategoriesAdmin(admin.ModelAdmin):
 
 @admin.register(Texte)
 class TexteAdmin(admin.ModelAdmin):
-    list_display = ['title']
+    list_display = ['title', 'author', 'date']
     prepopulated_fields = {'slug': ('title',)}
 
 @admin.register(Commentaire)
 class CommentaireAdmin(admin.ModelAdmin):
-    list_display = ['body']
+    list_display = ['name','body']
 
 
 

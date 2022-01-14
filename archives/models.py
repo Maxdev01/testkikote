@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User 
 
+from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 
@@ -20,11 +22,21 @@ class ArchivesPlace(models.Model):
     categorie = models.ForeignKey(PlaceCategory, related_name='archives', on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='users')
     name = models.CharField(max_length=500)
-    image_one = models.ImageField(upload_to="archives_images", null=True, blank=True)
-    image_two = models.ImageField(upload_to="archives_images", null=True, blank=True)
     adress = models.CharField(max_length=500)
     phone_one = models.CharField(max_length=15)
     phone_two = models.CharField(max_length=15, null=True, blank=True)
+
+    # en periode test
+    # image_one = models.ImageField(upload_to="archives_images", null=True, blank=True)
+    # image_two = models.ImageField(upload_to="archives_images", null=True, blank=True)
+    
+
+    # En production
+
+    image_one = CloudinaryField("image", null=True, blank=True)
+    image_two = CloudinaryField("image", null=True, blank=True)
+
+
     email = models.CharField(max_length=100, null=True, blank=True )
     description = models.TextField(null=True, blank=True)
     website_link = models.CharField(max_length=500, null=True, blank=True)
