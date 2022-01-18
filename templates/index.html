@@ -112,7 +112,7 @@
                     <div class="company-info">
                         <h4><a href="#"> {{ i.name }} </a></h4>
                         <p class="opacity-info"> <i class="fas fa-map-marker-alt marg-icon"></i>{{ i.adress }} </p>
-                        <p class="opacity-info"> <i class="fas fa-phone-square-alt marg-icon"></i> (509) {{ i.phone_one }}</p>
+                        <p class="opacity-info"> <i class="fas fa-phone-square-alt marg-icon"></i>{{ i.phone_one }}</p>
                         <p class="opacity-info"> <a href="{% url 'detay' i.id %}"><i class="fas fa-info-circle marg-icon"></i> Plis enfo</a></p>
                     </div>
 
@@ -125,11 +125,11 @@
 
             <div id="paginator" style="margin-left: 20px;">
                 {% if places.has_previous %}
-                <a href="{% url 'firststep' %}?page={{places.previous_page_number}}"> <i class="fas fa-angle-double-left"></i>Avan ~~</a>
+                <a href="{% url 'firststep' %}?page={{places.previous_page_number}}"> <i class="fas fa-angle-double-left"></i> Avant ~~</a>
                 {% endif %}
 
                 {% if places.has_next %}
-                    <a href="{% url 'firststep' %}?page={{places.next_page_number}}"> ~~ Apre <i class="fas fa-angle-double-right"></i></a>
+                    <a href="{% url 'firststep' %}?page={{places.next_page_number}}"> ~~ Après <i class="fas fa-angle-double-right"></i></a>
                 {% endif %}
             </div>     
 
@@ -139,8 +139,11 @@
 
         <div>
             <div>
-                    
+                <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=8&p=42&l=ur1&category=audible&banner=0RKM5MR1KHXR0033K6G2&f=ifr&linkID=d1e3a58f35113965ba9d537d24a47147&t=kikoteayiti50-21&tracking_id=kikoteayiti50-21" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
+                <br>
+                <hr>
+                <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=8&p=20&l=ur1&category=audible&banner=0436DM8H5F3TJGX49NG2&f=ifr&linkID=8b51b0ec41077a7c901866cf4985f21e&t=kikoteayiti50-21&tracking_id=kikoteayiti50-21" width="120" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 
             </div>
 
