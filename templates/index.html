@@ -114,10 +114,10 @@
                     </div>
     
                     <div class="company-info">
-                        <h4><a href="#"> {{ i.name }} </a></h4>
+                        <h4><a href="{% url 'detay' i.id %}"> {{ i.name }} </a></h4>
                         <p class="opacity-info"> <i class="fas fa-map-marker-alt marg-icon"></i>{{ i.adress }} </p>
                         <p class="opacity-info"> <i class="fas fa-phone-square-alt marg-icon"></i>{{ i.phone_one }}</p>
-                        <p class="opacity-info"> <a href="{% url 'detay' i.id %}"><i class="fas fa-info-circle marg-icon"></i> Plis enfo</a></p>
+                        <p class="opacity-info"> <a href="{% url 'detay' i.id %}"><i class="fas fa-info-circle marg-icon"></i>lire plus </a></p>
                     </div>
 
                 </div>
