@@ -1,7 +1,35 @@
-.all-posts-articles
+#all-posts-articles
 {
     display: grid;
-    grid-template-columns: repeat(2, 700px 300px);
-     background: brown;
+    grid-template-columns: repeat(2, 900px 150px);
+    margin-right: 20px;
+    margin-left: 20px;
+    
 }
 
+
+.box-articles 
+{
+    display: flex;
+}
+
+.box-images 
+{
+    width: 390px;
+    height: 270px;
+    
+    
+}
+
+.box-images img
+{
+    width: 390px;
+    height: 270px;
+}
+.mini-box-post
+{
+    width: 400px;
+    height: auto;
+    margin-left: 10px;
+    
+}

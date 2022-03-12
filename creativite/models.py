@@ -64,7 +64,7 @@ class ArticlePost(models.Model):
     category = models.ForeignKey(categoriesPost, related_name="articleposts", on_delete=models.CASCADE)
     title = models.CharField(max_length=900)
     sub_title = models.CharField(max_length=500, null=True, blank=True)
-    author = models.CharField(max_length=300)
+    author = models.CharField(max_length=200)
     date_created = models.DateTimeField(default=timezone.now)
     slug = models.SlugField(unique_for_date="date_created")
     body = models.TextField()

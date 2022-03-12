@@ -1,18 +1,35 @@
+{% extends 'base.html'%}
 
-
-{% bblock content %}
+{% block content %}
 
     <div>
-        <h3>Mon logo</h3>
+        <h3 style="color: blue;">Mon logo</h3>
     </div>
     <div>
         <h3>les categories</h3>
     </div>
 
-    <div class="all-posts-articles">
+    <div id="all-posts-articles">
+        <div class="box-articles">
+            
+            {% for i in all_articles %}
 
-        <div>
-            <h2>les articles</h2>
+
+            <div class="mini-box-post">
+                <div class="box-images">
+                    <img src="{{ i.photho1.url }}" alt="">
+                </div>
+                
+                <h2>{{ i.title }} </h2>
+                <h3> {{ i.author }} </h3>
+                <p> {{ i.category }} </p>
+                <p> {{ i.date_created }} </p>
+            </div>
+                    
+
+                
+
+            {% endfor %}
         </div>
 
         <div>

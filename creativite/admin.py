@@ -32,6 +32,8 @@ class ArticlePostAdmin(admin.ModelAdmin):
 @admin.register(categoriesPost)
 class categoriesPostAdmin(admin.ModelAdmin):
     list_display = ['name']
+    prepopulated_fields = {'slug': ('name',)}
+
    
 
 
