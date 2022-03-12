@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
@@ -47,3 +48,35 @@ class Commentaire(models.Model):
     def __str__(self):
         return self.name 
         
+
+
+
+class categoriesPost(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100)
+
+
+    def __str__(self):
+        return self.name 
+
+
+class ArticlePost(models.Model):
+    category = models.ForeignKey(categoriesPost, related_name="articleposts", on_delete=models.CASCADE)
+    title = models.CharField(max_length=900)
+    sub_title = models.CharField(max_length=500, null=True, blank=True)
+    author = models.CharField(max_length=300)
+    date_created = models.DateTimeField(default=timezone.now)
+    slug = models.SlugField(unique_for_date="date_created")
+    body = models.TextField()
+    photho1 = models.ImageField(upload_to="image_files")
+    photho2 = models.ImageField(upload_to="image_files", null=True, blank=True)
+    publish_by = models.CharField(max_length=200)
+    like = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
+    status = models.BooleanField(default=True)
+    mail = models.EmailField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+

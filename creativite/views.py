@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect , get_object_or_404
-from .models import CreationCategories , Texte
+from .models import CreationCategories , Texte , categoriesPost, ArticlePost
 from django.core.paginator import Paginator , EmptyPage
 from .forms import CommentForm
 from django.db.models import Q
@@ -61,3 +61,12 @@ def DetailTexte(request, id=id):
     }
 
     return render(request, 'creative/details.html', context)
+
+
+
+def Allposts(request):
+    all_articles = ArticlePost.objects.filter(status=True)
+
+    context = {'all_articles' : all_articles}
+
+    return render(request, 'article/posts.html', context)
