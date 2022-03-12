@@ -1,0 +1,7 @@
+.all-posts-articles
+{
+    display: grid;
+    grid-template-columns: repeat(2, 700px 300px);
+     background: brown;
+}
+
