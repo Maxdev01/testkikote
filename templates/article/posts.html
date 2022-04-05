@@ -4,7 +4,11 @@
         <div class="link-catego">
             <ul class="ul-catego">
                 {% for link in all_category %}
-                    <a href=" ">{{ link.name }}</a>
+                    <li>
+                        <a href="{% url 'onecatego' link.slug %}"> {{ link.name }}</a>
+                    </li>
+
+                   
                 {% endfor %}
             </ul>
         </div>

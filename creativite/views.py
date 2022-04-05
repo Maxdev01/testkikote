@@ -72,13 +72,17 @@ def Allposts(request, catego=None):
     if catego:
         all_articles = all_articles.filter(category__slug=catego)
 
-    p = Paginator(ArticlePost.objects.all(), 2)
-    page = request.GET.get('page')
-    all = p.get_page(page)
+    if all_articles:
+        p = Paginator(ArticlePost.objects.all(), 2)
+        page = request.GET.get('page')
+        all = p.get_page(page)
 
 
+    
 
-    context = {'all_articles' : all_articles, 'all' : all, 'all_category': all_category}
+
+    
+    context = {'all_articles' : all_articles,  'all_category': all_category, 'all' : all,}
 
     return render(request, 'article/posts.html', context)
 
