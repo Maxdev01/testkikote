@@ -1,0 +1,52 @@
+.detail-arts
+{
+    display: grid;
+    grid-template-columns: repeat(2, 800px 500px);
+    margin-left: 40px;
+}
+
+
+
+.second-details
+{
+    
+}
+
+.first-arts
+{
+    background: red;
+}
+
+.detail-image 
+{
+    width: 98%;
+    height: auto;   
+}
+
+.detail-image img
+{
+    width: 98%;
+    height: auto;
+}
+
+.second-details #id-description
+{
+    word-wrap: break-word;
+    font-size: 18px;
+    width: 98%;
+}
+
+#article-title
+{
+    word-wrap: break-word;
+    width: 98%;
+}
+
+@media (max-width: 1009px)
+{
+    .detail-arts 
+    {
+        display: block;
+        margin-left: 4px;
+    }
+}

@@ -35,8 +35,6 @@ def ListTextes(request ,categ=None):
         page = p.page(1)
 
 
-    
-
     context = {'all_posts': all_posts, 'more_read':  more_read, 'all_categs': all_categs, 
                'all_posts': page }
 
@@ -73,7 +71,7 @@ def Allposts(request, catego=None):
         all_articles = all_articles.filter(category__slug=catego)
     
     all = None
-    
+
     if all_articles:
         p = Paginator(ArticlePost.objects.all(), 2)
         page = request.GET.get('page')
@@ -93,3 +91,19 @@ def Allposts(request, catego=None):
 #     template_name = 'article/posts.html'
 #     paginate_by = 3
 #     #queryset = ArticlePost.objects.all()
+
+# pati sa se pou detay sou chak atik
+# ladan ap gen 
+# -- commentaire 
+# -- kantite fwa yo we 
+# -- django social share 
+# -- epi tout detay yo 
+
+def DetailsArticle(request, id=id):
+    d = get_object_or_404(ArticlePost, id=id)
+    d.views = d.views + 1
+    d.save()
+
+
+    context = {'d': d}
+    return render(request, 'article/details.html', context)

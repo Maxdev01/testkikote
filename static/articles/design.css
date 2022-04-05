@@ -18,9 +18,7 @@
 .box-images 
 {
     width: 350px;
-    height: 180px;
-    
-    
+    height: 180px;   
 }
 
 .box-images img
@@ -28,6 +26,7 @@
     width: 350px;
     height: 180px;
 }
+
 .mini-box-post
 {
     width: 400px;

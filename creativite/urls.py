@@ -8,5 +8,6 @@ urlpatterns = [
     path('detay-sou-text-lan/<int:id>/', views.DetailTexte, name="detailtextes"),
     path('article-dans-la-categorie/<catego>', views.Allposts, name='onecatego'),
     path('liste-de-nos-articles', views.Allposts, name="artposts" ),
+    path('details-sur-l-article/<int:id>/', views.DetailsArticle, name='detailarticle'), 
      
 ]
