@@ -33,11 +33,11 @@
                 <div id="paginator">
                     {% if user.has_previous %}
                     <a href="{% url 'viewsuser' %}?page={{user.previous_page_number}}" style="margin-right: 10px; margin-left: 10px;"> 
-                        <i class="fas fa-angle-double-left"></i>Avant </a>
+                        <i class="fas fa-angle-double-left"></i>Precedente</a>
                     {% endif %}
 
                     {% if user.has_next %}
-                        <a href="{% url 'viewsuser' %}?page={{user.next_page_number}}">Apre <i class="fas fa-angle-double-right"></i></a>
+                        <a href="{% url 'viewsuser' %}?page={{user.next_page_number}}">Suivante <i class="fas fa-angle-double-right"></i></a>
                     {% endif %}
                 </div>
             </div>

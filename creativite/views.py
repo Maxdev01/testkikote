@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect , get_object_or_404
 from .models import CreationCategories , Texte , categoriesPost, ArticlePost
 from django.core.paginator import Paginator , EmptyPage
+from django.views.generic import ListView
 from .forms import CommentForm
 from django.db.models import Q
 
@@ -64,9 +65,27 @@ def DetailTexte(request, id=id):
 
 
 
-def Allposts(request):
-    all_articles = ArticlePost.objects.filter(status=True)
+def Allposts(request, catego=None):
+    all_articles = ArticlePost.objects.all()
 
-    context = {'all_articles' : all_articles}
+    all_category = categoriesPost.objects.all()
+    if catego:
+        all_articles = all_articles.filter(category__slug=catego)
+
+    p = Paginator(ArticlePost.objects.all(), 2)
+    page = request.GET.get('page')
+    all = p.get_page(page)
+
+
+
+    context = {'all_articles' : all_articles, 'all' : all, 'all_category': all_category}
 
     return render(request, 'article/posts.html', context)
+
+
+# class ArticlePostListView(ListView):
+#     model = ArticlePost
+#     ordering = ['id']
+#     template_name = 'article/posts.html'
+#     paginate_by = 3
+#     #queryset = ArticlePost.objects.all()

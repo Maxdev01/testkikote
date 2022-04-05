@@ -1,40 +1,62 @@
 {% extends 'base.html'%}
 
 {% block content %}
-
-    <div>
-        <h3 style="color: blue;">Mon logo</h3>
-    </div>
-    <div>
-        <h3>les categories</h3>
-    </div>
+        <div class="link-catego">
+            <ul class="ul-catego">
+                {% for link in all_category %}
+                    <a href=" ">{{ link.name }}</a>
+                {% endfor %}
+            </ul>
+        </div>
+    
 
     <div id="all-posts-articles">
-        <div class="box-articles">
-            
-            {% for i in all_articles %}
-
-
+        
+        <div class="box-articles">      
+            {% for i in all %}
             <div class="mini-box-post">
                 <div class="box-images">
                     <img src="{{ i.photho1.url }}" alt="">
                 </div>
                 
-                <h2>{{ i.title }} </h2>
-                <h3> {{ i.author }} </h3>
-                <p> {{ i.category }} </p>
-                <p> {{ i.date_created }} </p>
+                <a href="#"><h3>{{ i.title }}</h3></a>
+                <h4 style="opacity: 0.6;"> {{ i.author }} </h4>
+                <p class="cl-opacity"> {{ i.category }} </p>
+                <p class="cl-opacity"> {{ i.date_created }} </p>
             </div>
-                    
-
-                
+            <hr>
+            <br>
 
             {% endfor %}
+            <br><br>
+            
+    
+            {% if all.has_previous %}
+                        <a href="?page=1"></a>
+                        <a href="?page={{ all.previous_page_number }} ">
+                            <h3> <i class="fas fa-angle-double-left"></i>Precedente</h3>
+                        </a>
+        
+            {% endif %}
+                
+        
+                
+            {% if all.has_next  %}
+                    <a href="?page={{ all.next_page_number }}"><h3>Suivante <i class="fas fa-angle-double-right"></i></h3></a>
+                    <a href="?page={{ all.paginator.num_pages }}"></a>
+            {% endif %}
         </div>
 
+        
+
+       
         <div>
             <h2>les plus lus</h2>
         </div>
+
+        
         
     </div>
+
+    
 {% endblock %}
