@@ -79,4 +79,17 @@ class ArticlePost(models.Model):
     def __str__(self):
         return self.title
 
+    
+class Reply(models.Model):
+    articles = models.ForeignKey(ArticlePost, related_name='replypost', on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, null=True, blank=True)
+    body = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
+
+    def __str(self):
+        return self.name 
+
+
+    
+
 
