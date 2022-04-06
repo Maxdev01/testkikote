@@ -43,16 +43,78 @@
                     <hr>
                     <p> {{ d.mail }}</p>
 
+                    <hr>
+                    <br>
+                    <br>
+
+                    <div class="content-comments">
+                        
+                        {% for c in d.replypost.all %}
+                        
+                         <div class="style-coms">
+                             <h4>@{{ c.name }}</h4>
+                             <p>{{c.body }}</p>
+                         </div>
+                        
+                         <hr>
+                         <br>
+                         {% empty %}
+                         <h4 style="color: var(--rouge);">Pas de Commentaire Pour l'instant <i class="fas fa-comments"></i> </h4>
+
+                        {% endfor %}
+
+                    </div>
+
+
+
+                    <div class="content-commentaire">
+                        <h5><i class="fas fa-comments"></i> Laisser un Commentaire  </h5>
+                        <hr>
+                        
+                        <form action="" method="post">
+                            {% csrf_token %}
+
+                            {{ formreply.as_p }}
+
+                            <button type="submit" id="btn-coms">Commenter</button>
+
+                        </form>
+                    </div>
+
 
 
             </div>
 
             <!-- sa se pou pati adwat lan -->
             <div class="first-arts">
-                <h1>Premier</h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Tempore sed laborum nisi, non quia veniam. Possimus temporibus ab neque laboriosam 
-                libero aperiam aliquid! Quos saepe architecto, illum mollitia velit natus!
+                <h1>First</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum ex eligendi ducimus iusto
+                     dolorum ut sequi rem. Aspernatur,
+                     labore porro! Sequi, ipsa assumenda odit architecto explicabo commodi deleniti doloremque.
+                </p>
+                <hr>
+                <br>
+
+                <h1>First</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum ex eligendi ducimus iusto
+                     dolorum ut sequi rem. Aspernatur,
+                     labore porro! Sequi, ipsa assumenda odit architecto explicabo commodi deleniti doloremque.
+                </p>
+                <hr>
+                <br>
+
+                <h1>First</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum ex eligendi ducimus iusto
+                     dolorum ut sequi rem. Aspernatur,
+                     labore porro! Sequi, ipsa assumenda odit architecto explicabo commodi deleniti doloremque.
+                </p>
+                <hr>
+                <br>
+
+                
             </div>
         </div>
 

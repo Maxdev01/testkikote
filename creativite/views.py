@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect , get_object_or_404
-from .models import CreationCategories , Texte , categoriesPost, ArticlePost
+from .models import CreationCategories , Texte , categoriesPost, ArticlePost, Reply
 from django.core.paginator import Paginator , EmptyPage
 from django.views.generic import ListView
-from .forms import CommentForm
+from .forms import CommentForm, ReplyForm
 from django.db.models import Q
 
 
@@ -104,6 +104,14 @@ def DetailsArticle(request, id=id):
     d.views = d.views + 1
     d.save()
 
+    if request.method == 'POST':
+        formreply = ReplyForm(request.POST)
+        if formreply.is_valid():
+            c = formreply.save(commit=False)
+            c.articles = d
+            c.save()
 
-    context = {'d': d}
+    formreply = ReplyForm
+
+    context = {'d': d, 'formreply': formreply }
     return render(request, 'article/details.html', context)

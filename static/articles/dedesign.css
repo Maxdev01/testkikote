@@ -14,7 +14,7 @@
 
 .first-arts
 {
-    background: red;
+    
 }
 
 .detail-image 
@@ -40,6 +40,50 @@
 {
     word-wrap: break-word;
     width: 98%;
+}
+
+.content-commentaire
+{
+    height: auto;
+    width: 800px;
+    border: 2px solid silver;
+}
+.content-commentaire label{
+    display: none;
+}
+
+.content-commentaire input
+{
+    margin-top: 10px;
+    width: 93%;
+    border-radius: 3px;
+    margin-left: 8px;
+ 
+}
+.content-commentaire textarea{
+    width: 94%;
+    margin-left: 8px;
+
+    border-radius: 5px;
+    height: 95px;
+    resize: none;
+    margin-top: 15px;
+
+}
+
+#btn-coms
+{
+    width: 99%;
+    height: 40px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    background: var(--rouge);
+    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 16px;
 }
 
 @media (max-width: 1009px)

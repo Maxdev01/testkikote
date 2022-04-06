@@ -1,6 +1,6 @@
 from csv import list_dialects
 from django.contrib import admin
-from .models import CreationCategories, Texte , Commentaire, ArticlePost, categoriesPost
+from .models import CreationCategories, Texte , Commentaire, ArticlePost, categoriesPost, Reply
 
 # Register your models here.
 
@@ -33,6 +33,12 @@ class ArticlePostAdmin(admin.ModelAdmin):
 class categoriesPostAdmin(admin.ModelAdmin):
     list_display = ['name']
     prepopulated_fields = {'slug': ('name',)}
+
+@admin.register(Reply)
+class ReplyAdmin(admin.ModelAdmin):
+    list_display = ['name', 'date']
+
+    
 
    
 
