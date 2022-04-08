@@ -47,13 +47,15 @@
                     <br>
                     <br>
 
-                    <div class="content-comments">
+                    <div class="scroll-comment">
                         
                         {% for c in d.replypost.all %}
                         
                          <div class="style-coms">
                              <h4>@{{ c.name }}</h4>
                              <p>{{c.body }}</p>
+                             <hr>
+                             <small style="color: white; margin-left: 3px;"> <i class="fa-solid fa-clock"></i> {{ c.date|timesince }}</small>
                          </div>
                         
                          <hr>
@@ -64,6 +66,8 @@
                         {% endfor %}
 
                     </div>
+                    <br>
+                    <br>
 
 
 
