@@ -23,6 +23,9 @@
             <h4><a href="{% url 'firststep' %}">Accueil</a>
                 <i class="fas fa-chevron-circle-right"></i>
                 Contenu(s)
+                <i class="fas fa-chevron-circle-right"></i>
+                <a href="{% url 'artposts' %}">Article(s)</a>
+
             </h4>
 
             <hr>
@@ -65,6 +68,12 @@
                     <a href="{% url 'alltextes' %}?page={{all_posts.next_page_number}}">Après<i class="fas fa-angle-double-right"></i></a>
                 {% endif %}
             </div>  
+
+            <hr>
+            <br>
+            <div>
+                <h4>Pour lire nos Article <a href="{% url 'artposts' %}">Cliquez ici</a></h4>
+            </div>
 
             
 

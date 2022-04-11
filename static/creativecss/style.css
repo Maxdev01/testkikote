@@ -299,6 +299,10 @@
     
     .global-detail-texte{display: block;}
     .center-poesie {width: 100%; left: 0;}
+    #ul-categ 
+    {
+        height: 44px;
+    }
 
     .content-coms{left: 0; width: 98%;}
 
