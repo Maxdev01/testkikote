@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: repeat(2, 700px 1fr);
     align-items: center;
-    margin-top: 20px;
+    margin-top: 4px;
 
     background-image: url("https://www.themecircle.net/wp-content/uploads/2020/05/blogging-is-the-heart-of-digital-marketing-background-image-scaled.jpg");
     background-size: cover;
@@ -42,13 +42,19 @@
     margin-top: 10px;
 }
 
-.section-global-content p
+.section-global-content #p-span
 {
     margin-bottom: 10px;
     margin-top: 5px;
-    color: black;
-    background: #fff;
+    color:  white;
+    background: black;
     opacity: 0.7;
+    width: 100%;
+}
+
+.section-global-content #p-span p 
+{
+    margin: 4px;
 }
 
 .section-global-content .btnpam 
@@ -124,6 +130,7 @@ border-radius: 50%;
     {
         display: block;
         width: 100%;
+        margin-top: 2px;
 
     }
 
@@ -133,9 +140,15 @@ border-radius: 50%;
     
     }
 
+    .section-global-content #p-span p
+    {
+        text-align: center;
+    }
+
     .social-media-content
     {
         transform: translateY(0) translateX(0);
+        
     }
 
     .section-global-content h1

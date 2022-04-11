@@ -14,13 +14,17 @@
             <h3>Kikote</h3>
 
             <hr>
-            <p>kikote se donne pour tâche de répertorier et d'exposer à ses 
+            <div id="p-span">
+
+                <p>
+                    kikote se donne pour tâche de répertorier et d'exposer à ses 
                 multiples abonné.e.s les différentes entreprises de la place et
                  leurs services offerts. Notre plateforme kikote permet aussi aux 
                  utilisateurs ayant une expérience professionnelle ou détenteur d’un 
                  diplôme de se faire connaître par l’ajout de leurs portfolios
                  sur le site en de vue d’accroître leur chance de réussite sur le marché du travail.
-            </p>
+                </p>
+            </div>
 
             <button class="btnpam btn01"><a href="#">FAQ</a></button>
             <a href="{% url 'connexion' %}"><button class="btnpam btn02">Se connecter</button></a>
@@ -44,51 +48,27 @@
         <h2>Voir nos articles <a href="{% url 'artposts' %}">cliquez ici </a> </h2>
     </div>
 
-
-
-
-    <!-- pou pati sevis entreprise lan -->
-
-    <div class="container-title">
-        <h3 id="title-container-design">Nos Services</h3>
-
-        <div class="container-service">
-            <div class="service-design">
-                <h1>Marketing</h1>
-                <p>
-                    Notre service consiste à vous apporter notre aide dans la gestion de 
-                    vos pages sur les réseaux sociaux. Nous vous offrons une vitrine pour mieux 
-                    vendre votre entreprise et vos produits et vous rapprocher du public en publiant vos coordonnées.
-                </p>
-            </div>
-
-
-            <div class="service-design">
-                <h1>Formation</h1>
-                <p>
-                    kikote vous offre des séances de formation en ligne ou en présentiel sur les termes suivants: cryptomonnaie, programmation et trading.
-                    <hr>
-
-                    <p>
-                        Grace à votre statut d’utilisateur et à l’aide de nos différentes pages, vous aurez les informations nécessaires sur la tenue de ces différentes séances 
-                        de formations. L’apprentissage étant l’essence de tout succès, n’hésitez pas à y participer.
-                    </p>
-                </p>
-            </div>
-
-            <div class="service-design">
-                <h1>Marketing Digital </h1>
-                <p>Nous offrons aussi le service marketing digital pour assurer votre identité
-                     visuelle en créant votre logo, vos flyers, vos banners et vos cartes de visite. </p>
-            </div>
-        </div>
+    <div>
+        <h2 id="all-catego">categorie(s)</h2>
+    <ul id="ul-categ-company">
+        <li><a href="{% url 'firststep' %}">Tout</a></li>
+        {% for i in categories %}
+            <li><a href="{% url 'allcatego' i.slug %}">{{ i.name }} </a></li>
+            {% empty%}
+            <h5>Pas de categorie pour l'instant</h5>
+        {% endfor %}
+    </ul>
     </div>
 
+
+
+
+   
     <!-- pou liste tout antrepriz yo net -->
 
     <div class="global-company">
         <div class="content-company">
-            <div>
+            <!-- <div>
                     <h2>categorie(s)</h2>
                 <ul id="ul-categ-company">
                     <li><a href="{% url 'firststep' %}">Tout</a></li>
@@ -98,7 +78,7 @@
                         <h5>Pas de categorie pour l'instant</h5>
                     {% endfor %}
                 </ul>
-            </div>
+            </div> -->
 
             <!-- <div>
                 <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=8&p=288&l=ur1&category=prime_video&banner=1MMB6DFN40NE65X5R3R2&f=ifr&linkID=af86f71714afd00aa0dd9e55d3cd9b5c&t=kikoteayiti50-21&tracking_id=kikoteayiti50-21" width="320" height="50" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
@@ -190,3 +170,51 @@
     </div> -->
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- pou pati sevis entreprise lan -->
+
+ <!-- <div class="container-title">
+    <h3 id="title-container-design">Nos Services</h3>
+
+    <div class="container-service">
+        <div class="service-design">
+            <h1>Marketing</h1>
+            <p>
+                Notre service consiste à vous apporter notre aide dans la gestion de 
+                vos pages sur les réseaux sociaux. Nous vous offrons une vitrine pour mieux 
+                vendre votre entreprise et vos produits et vous rapprocher du public en publiant vos coordonnées.
+            </p>
+        </div>
+
+
+        <div class="service-design">
+            <h1>Formation</h1>
+            <p>
+                kikote vous offre des séances de formation en ligne ou en présentiel sur les termes suivants: cryptomonnaie, programmation et trading.
+                <hr>
+
+                <p>
+                    Grace à votre statut d’utilisateur et à l’aide de nos différentes pages, vous aurez les informations nécessaires sur la tenue de ces différentes séances 
+                    de formations. L’apprentissage étant l’essence de tout succès, n’hésitez pas à y participer.
+                </p>
+            </p>
+        </div>
+
+        <div class="service-design">
+            <h1>Marketing Digital </h1>
+            <p>Nous offrons aussi le service marketing digital pour assurer votre identité
+                 visuelle en créant votre logo, vos flyers, vos banners et vos cartes de visite. </p>
+        </div>
+    </div>
+</div> -->

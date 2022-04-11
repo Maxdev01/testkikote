@@ -18,7 +18,7 @@ nav {
     height: 80px;
     width: 100%;
     background: var(--rouge);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 label.logo {
@@ -79,6 +79,7 @@ nav #icon {
     nav a {
         font-size: 17px;
     }
+    
 
     
 }
@@ -116,6 +117,8 @@ nav #icon {
         border: none;
         color: #fff;
     }
+
+    
 }
 
 nav ul.show {

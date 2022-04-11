@@ -33,7 +33,7 @@
     color: white;
 }
 
-.content-company h2
+#all-catego
 {
     text-align: center;
     align-items: center;
@@ -117,20 +117,34 @@
 
 .images_archives
 {
-    width: 600px;
+    width: 748px;
     height: auto;
     
 }
 
 .images_archives img
 {
-    width: 100%
+    width: 100%;
+}
+.infos-archives
+{
+    
+    width: 750px;
+}
+
+.infos-archives h1
+{
+    background: #b81b30;
+    color: white;
 }
 
 .infos-archives p {
-    font-size: 13px;
+    font-size: 14px;
 }
 
+.infos-archives #detail-company {
+    font-size: 20px;
+}
 .more-infos-archives
 
 {

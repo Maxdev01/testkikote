@@ -18,7 +18,6 @@ def index(request, catego=None):
     categories = PlaceCategory.objects.all()
     places = ArchivesPlace.objects.all().order_by("-created")
 
-
     if catego:
         places = places.filter(categorie__slug=catego)
 
@@ -57,6 +56,8 @@ def profilDetail(request, id=None):
 def detailArchive(request, id=None):
 
     details = get_object_or_404(ArchivesPlace, id=id)
+    details.views = details.views + 1 
+    details.save()
 
     context = {'details': details }
 

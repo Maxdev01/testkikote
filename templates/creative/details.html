@@ -2,6 +2,13 @@
 {% load social_share %}
 {% load creative_tags %}
 
+{% block header %}
+    <meta property="og:title" content="{{ detail_texts.title }}" />
+    <meta property="og:description" content="{{ detail_texts.author }}" />
+    <!-- <meta property="og:url" content="{{ article.url_detail }}" /> -->
+    <meta property="og:image" content="{{ detail_texts.photo.url }}" />
+{% endblock %}
+
 {% block content %}
 
             <div class="global-detail-texte">

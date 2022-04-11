@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% load social_share %}
 
+{% block header %}
+    <meta property="og:title" content="{{ details.name }}" />
+    <meta property="og:description" content="{{ details.adress }}" />
+    <!-- <meta property="og:url" content="{{ article.url_detail }}" /> -->
+    <meta property="og:image" content="{{ details.image_one.url }}" />
+{% endblock %}
+
 <!-- Fichye css ki responsab li -->
+<!-- static/archives/companystyle.css -->
 
 {% block content %}
 
@@ -17,6 +25,8 @@
                                 <i class="fas fa-chevron-circle-right"></i>  Detail(s)
 
                         </h4>
+                        <hr>
+                        <br>
 
                     <div class="images_archives">
                         {% if details.image_one %}
@@ -26,23 +36,27 @@
 
                         {% endif %}
                     </div>
-                    <h4> {{  details.name }}</h4>
+                    <h1> {{  details.name }}</h1>
+                    <br>
+                    <p id="detail-company"> {{ details.description }}</p>
                     <p>Tel : {{ details.phone_one  }} </p>
                     <p> Adres : {{ details.adress }} </p>
 
 
             </div>
 
+            <!-- part 2 -->
 
             <div class="more-infos-archives">
 
                 <div>
 
-                    <p><strong>Adrès</strong> : {{ details.adress }} </p>
+                    <p><strong>Adresse : </strong> : {{ details.adress }} </p>
                     <hr>
-                    <p><strong>Tel</strong> : {{ details.phone_one }} </p>
+                    <p><strong>Numéro de téléphone : </strong>  {{ details.phone_one }} </p>
+                    <p><small>Nombre de visite : <i class="fa-solid fa-eye"></i> {{ details.views }}</small></p>
                     <hr>
-                    <h5>Pataje</h5>
+                    <h5>Partger Avec:</h5>
                     <hr>
 
                     <div class="media-none" style="display: none;">
