@@ -25,6 +25,15 @@
     text-transform: uppercase;
     color: var(--rouge);
     margin-left: 20px;
+    
+}
+
+#ul-categ-company li
+{
+    margin: 2px;
+    text-align: center;
+    border-radius: 12%;
+    
 }
 
 #ul-categ-company li a:hover
@@ -93,12 +102,19 @@
 
 
 
-@media (max-width: 765px)
+@media (max-width: 909px)
 {
     .global-company{display: block;}
     .content-info-company { width: 97%;}
+    #ul-categ-company {
+        height: 44px;
+    }
 }
 
+@media (max-width: 1009px)
+{
+
+}
 
 .one-content-arhives
 {
