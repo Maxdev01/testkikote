@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,34 @@
     <link rel="stylesheet" href="{% static 'pub.css' %}">
     <link rel="stylesheet" href="{% static 'articles/design.css' %}">
     <link rel="stylesheet" href="{% static 'articles/dedesign.css' %}">
+
+    
+     <meta name="description" content="">
+
+     <!-- Facebook Meta Tags -->
+     <meta property="og:url" content="https://www.kikoteayiti.com/">
+     <meta property="og:type" content="website">
+     <meta property="og:title" content="Ak kikote m pral tout kote">
+     <meta property="og:description" content="kikote se donne pour tâche de répertorier et d'exposer à ses 
+     multiples abonné.e.s les différentes entreprises de la place et
+      leurs services offerts. Notre plateforme kikote permet aussi aux 
+      utilisateurs ayant une expérience professionnelle ou détenteur d’un 
+      diplôme de se faire connaître par l’ajout de leurs portfolios
+      sur le site en de vue d’accroître leur chance de réussite sur le marché du travail.">
+     <meta property="og:image" content="{% static 'KiKote-Monogramme.png' %}">
+     
+     <!-- Twitter Meta Tags -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta property="twitter:domain" content="kikoteayiti.com">
+     <meta property="twitter:url" content="https://www.kikoteayiti.com/">
+     <meta name="twitter:title" content="Ak kikote m pral tout kote">
+     <meta name="twitter:description" content="kikote se donne pour tâche de répertorier et d'exposer à ses 
+     multiples abonné.e.s les différentes entreprises de la place et
+      leurs services offerts. Notre plateforme kikote permet aussi aux 
+      utilisateurs ayant une expérience professionnelle ou détenteur d’un 
+      diplôme de se faire connaître par l’ajout de leurs portfolios
+      sur le site en de vue d’accroître leur chance de réussite sur le marché du travail.">
+     <meta name="twitter:image" content="{% static 'KiKote-Monogramme.png' %}">
 
 
     {% block header %} {% endblock %}

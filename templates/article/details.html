@@ -3,8 +3,8 @@
 
 {% block header %}
     <meta property="og:title" content="{{ d.title }}" />
-    <meta property="og:description" content="{{ d.sub_title }}" />
-    <!-- <meta property="og:url" content="{{ article.url_detail }}" /> -->
+    <meta property="og:description" content="{{ d.author }}" />
+    <meta property="og:url" content="https://www.kikoteayiti.com/">
     <meta property="og:image" content="{{ d.photho1.url }}" />
 {% endblock %}
 
@@ -17,6 +17,7 @@
                     <h4> {{ d.author }} | <span> {{ d.date_created|timesince }}</span></h4>
                     <small> Publie par : {{ d.publish_by}} </small>
                     <span><span> <i class="fas fa-eye"></i> {{ d.views }}</span>
+                    <h1>li la</h1>
 
                     <hr>
                     <div class="media-none" style="display: none;">
