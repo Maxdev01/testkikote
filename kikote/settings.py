@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'archives',
     'creativite',
     'django_social_share',
+    'hitcount',
     
     
 ]
