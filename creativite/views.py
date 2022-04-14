@@ -164,14 +164,19 @@ def DetailsArticle(request, id=id):
 
     if len(result) == 1:
         print('user exist ')
+        
+
     
-    elif len(result) > 1:
+    elif len(result) > 10:
         print('user exit more....')
     else:
         u.save()
         print('user is unique')
+    
+    
 
     countip = UserIp.objects.all().count()
+    
 
     formreply = ReplyForm
 
