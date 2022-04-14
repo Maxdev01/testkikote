@@ -1,0 +1,192 @@
+:root {
+    --font : #EEEEEE;
+}
+
+.container-profil-potfolio 
+{
+    display: grid;
+    grid-template-columns: repeat(2, 400px 750px);
+    
+}
+
+.content-profil 
+{
+    height: auto;
+    margin-bottom: 30px;
+
+}
+
+.content-profil .content-image
+{
+    text-align: center;
+   
+}
+
+.content-profil .content-image img
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    
+}
+
+.content-profil .content-profil-text
+
+{
+    text-align: center;
+    width: auto;
+    border: 1px solid var(--rouge);
+    color: black
+}
+
+.content-profil .content-profil-text i
+{
+    font-size: 18px;
+    border: 1px solid silver;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    padding: 8px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 50%;
+    background: var(--rouge);
+    color: #fff;
+}
+
+#margin-content 
+{
+    margin-left: 30px;
+}
+
+#head-potfolio
+{
+    width: 400px;
+    background: var(--rouge);
+    height: auto;
+    color: #fff;
+}
+
+#head-potfolio h4
+{
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+
+
+@media (max-width: 909px)
+{
+    .container-profil-potfolio{
+        display: block;
+    }
+    .content-profil
+    {
+        width: 100%;
+    }
+
+    #margin-content
+    {
+        margin-left: 0;
+    }
+
+    #head-potfolio
+    {
+        width: 98%;
+    }
+
+}
+
+.social-media-share-style
+{
+    font-size: 22px;
+}
+
+.social-media-share-style p
+{
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--rouge);
+    margin-bottom: 3px;
+}
+    
+
+
+.social-media-share-style span
+{
+    padding-left: 10px;
+}
+
+.social-media-share-style span a
+{
+    color: inherit;
+}
+
+
+
+
+
+/* Design pou potfolio-user lan */
+
+.potfolio-user2-content
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#potfolio-info
+{
+    background: #FAFAFA;
+    border-radius: 3%;
+    box-shadow: 1px 1px var(--rouge);
+
+}
+#potfolio-info h1 
+{
+    font-size: 18px;
+    color: var(--rouge);
+    text-transform: uppercase;
+    border-bottom: 1px double silver;
+    word-wrap: break-word;
+}
+
+#potfolio-content #text-potfolio{
+    word-wrap: break-word;
+}
+
+.style-content-potfolio2
+{
+    width: 350px;
+    height: auto;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+.opacity-style 
+{
+    opacity: 0.5;
+}
+
+
+@media (max-width: 909px)
+{
+    .potfolio-user2-content
+    {
+        display: block;
+    }
+
+    .style-content-potfolio2
+    {
+        width: auto;
+        margin-left: 0;
+    }
+
+    #potflio-content 
+    {
+        width: 97%;
+    }
+}
