@@ -3,14 +3,13 @@ from cgitb import reset
 from hashlib import algorithms_available
 from unittest import result
 from django.shortcuts import render, redirect , get_object_or_404
-from .models import CreationCategories , Texte , categoriesPost, ArticlePost, Reply, UserIp, UserIpText
+from .models import CreationCategories , Texte , categoriesPost, ArticlePost, Reply, UserIp
 from django.core.paginator import Paginator , EmptyPage
 from django.views.generic import ListView
 from .forms import CommentForm, ReplyForm
 from django.db.models import Q
 
-# hitcount for ip adress
-#from hitcount.views import HitCountDetailView 
+
 
 
 # Create your views here.
