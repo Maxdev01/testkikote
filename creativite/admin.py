@@ -1,10 +1,9 @@
 from csv import list_dialects
 from django.contrib import admin
-from .models import CreationCategories, Texte , Commentaire, ArticlePost, UserIpText, categoriesPost, Reply , UserIp,UserIpText
+from .models import CreationCategories, Texte , Commentaire, ArticlePost, categoriesPost, Reply , UserIp,UserIpText
 
 # Register your models here.
 admin.site.register(UserIp)
-admin.site.register(UserIpText)
 
 
 @admin.register(CreationCategories)
