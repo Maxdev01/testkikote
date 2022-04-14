@@ -89,7 +89,7 @@
                 <div class="content-info-company">
                     <div class="company-image">
                         {% if i.image_one %}
-                        <img src="{{ i.image_one.url }}" alt="">
+                        <img src="{{ i.image_one.url }}" alt="image entreprise or compagny">
     
                         {% else %}
     
@@ -107,6 +107,8 @@
                 </div>
 
                 {% empty %}
+                <br>
+                <hr>
                 <h5>Pas de contenu pour l'instant </h5>
 
             {% endfor %}

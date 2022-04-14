@@ -61,37 +61,11 @@ def DetailTexte(request, id=id):
     
     form = CommentForm
 
-    # fonksyon pou nou we nombre vizite yo
-    def get_ip(request):
-        adress = request.META.get('HTTP_X_FOWARDED_FOR')
-
-        if adress:
-            ip = adress.slit(',')[1].strip()
-
-        else:
-            ip = request.META.get('REMOTE_ADDR')
-            return ip
-    ip = get_ip(request)
-    u = UserIpText(user=ip)
-    print(ip)
-
-    result = UserIpText.objects.filter(Q(user__icontains=ip))
-
-    if len(result) == 1:
-        print('user exist ')
     
-    elif len(result) > 1:
-        print('user exit more....')
-    else:
-        u.save()
-        print('user is unique')
-
-    countip = UserIpText.objects.all().count()
 
     context ={
         'detail_texts': detail_texts,
         'form': form,
-        'countip': countip
     }
 
     return render(request, 'creative/details.html', context)
