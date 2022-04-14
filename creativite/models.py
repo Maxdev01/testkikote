@@ -90,6 +90,19 @@ class Reply(models.Model):
         return self.name 
 
 
+# Se pou nou ka jwenn IP an 
+
+class UserIp(models.Model):
+    user = models.TextField(default=None)
+
+    def __str__(self):
+        return self.user
     
 
 
+class UserIpText(models.Model):
+    user = models.TextField(default=None)
+
+    def __str__(self):
+        return self.user
+    

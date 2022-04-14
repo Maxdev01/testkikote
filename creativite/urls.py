@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path , include
 from . import views
 
 
@@ -8,6 +8,7 @@ urlpatterns = [
     path('detay-sou-text-lan/<int:id>/', views.DetailTexte, name="detailtextes"),
     path('article-dans-la-categorie/<catego>', views.Allposts, name='onecatego'),
     path('liste-de-nos-articles', views.Allposts, name="artposts" ),
-    path('details-sur-l-article/<int:id>/', views.DetailsArticle, name='detailarticle'), 
+    path('details-sur-l-article/<int:id>/', views.DetailsArticle, name='detailarticle'),
+    # path(r'hitcount/', include('hitcount.urls', namespace='hitcount')),
      
 ]

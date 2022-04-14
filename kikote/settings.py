@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import sys
+
+#  Used to
+# sys.path.insert(0, '../../django-hitcount')  # our hitcount app
+
 
 import cloudinary
 
@@ -152,3 +157,5 @@ cloudinary.config(
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+

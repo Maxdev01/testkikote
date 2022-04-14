@@ -1,9 +1,16 @@
+from builtins import print
+from cgitb import reset
+from hashlib import algorithms_available
+from unittest import result
 from django.shortcuts import render, redirect , get_object_or_404
-from .models import CreationCategories , Texte , categoriesPost, ArticlePost, Reply
+from .models import CreationCategories , Texte , categoriesPost, ArticlePost, Reply, UserIp, UserIpText
 from django.core.paginator import Paginator , EmptyPage
 from django.views.generic import ListView
 from .forms import CommentForm, ReplyForm
 from django.db.models import Q
+
+# hitcount for ip adress
+#from hitcount.views import HitCountDetailView 
 
 
 # Create your views here.
@@ -47,16 +54,44 @@ def DetailTexte(request, id=id):
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
-        if form.is_valid():
+        if form.is_valid(): 
             c = form.save(commit=False)
             c.post = detail_texts
             c.save()
     
     form = CommentForm
 
+    # fonksyon pou nou we nombre vizite yo
+    def get_ip(request):
+        adress = request.META.get('HTTP_X_FOWARDED_FOR')
+
+        if adress:
+            ip = adress.slit(',')[1].strip()
+
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+            return ip
+    ip = get_ip(request)
+    u = UserIpText(user=ip)
+    print(ip)
+
+    result = UserIpText.objects.filter(Q(user__icontains=ip))
+
+    if len(result) == 1:
+        print('user exist ')
+    
+    elif len(result) > 1:
+        print('user exit more....')
+    else:
+        u.save()
+        print('user is unique')
+
+    countip = UserIpText.objects.all().count()
+
     context ={
         'detail_texts': detail_texts,
-        'form': form
+        'form': form,
+        'countip': countip
     }
 
     return render(request, 'creative/details.html', context)
@@ -110,8 +145,43 @@ def DetailsArticle(request, id=id):
             c = formreply.save(commit=False)
             c.articles = d
             c.save()
+    
+    # fonksyon pou nou we nombre vizite yo
+    def get_ip(request):
+        adress = request.META.get('HTTP_X_FOWARDED_FOR')
+
+        if adress:
+            ip = adress.slit(',')[1].strip()
+
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+            return ip
+    ip = get_ip(request)
+    u = UserIp(user=ip)
+    print(ip)
+
+    result = UserIp.objects.filter(Q(user__icontains=ip))
+
+    if len(result) == 1:
+        print('user exist ')
+    
+    elif len(result) > 1:
+        print('user exit more....')
+    else:
+        u.save()
+        print('user is unique')
+
+    countip = UserIp.objects.all().count()
 
     formreply = ReplyForm
 
-    context = {'d': d, 'formreply': formreply }
+    context = {'d': d, 'formreply': formreply, 'countip': countip }
     return render(request, 'article/details.html', context)
+
+
+
+# class PostDetailView(HitCountDetailView):
+#     model = ArticlePost
+#     template_name = 'article/details.html'
+#     slug_field = 'slug'
+#     count_hit = True

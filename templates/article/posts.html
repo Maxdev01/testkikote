@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 
+
+
 {% block content %}
 
        
@@ -32,16 +34,21 @@
                 <div class="box-images">
                     <img src="{{ i.photho1.url }}" alt="">
                 </div>
+                <br>
+                    
                 
                 <a href="{% url 'detailarticle' i.id %}"><h3>{{ i.title }}</h3></a>
                 <h4 style="opacity: 0.6;"> {{ i.author }} </h4>
                 <p class="cl-opacity"> {{ i.category }} </p>
                 <p class="cl-opacity"> {{ i.date_created }} </p>
+                
             </div>
             <hr>
             <br>
-
+            
             {% endfor %}
+
+            
             
             <hr>
 
