@@ -14,7 +14,20 @@
 
 {% block content %}
 
+        <br>
+
+        <h4 style="margin-left: 25px;">
+            <span><a href="{% url 'artposts' %}" style="color: var(--rouge);">Liste d'article </a></span>
+            <i class="fas fa-chevron-circle-right"></i>
+            <span>Detail(s) article</span>
+            <i class="fas fa-chevron-circle-right"></i>
+            <span><a href="{% url 'firststep' %}" style="color: var(--rouge);">Page d'Accueil</a></span>
+        </h4>
+        
+        <br>
+
         <div class="detail-arts">
+            
             <div class="second-details">
                     <p>{{ d.category }} </p>
                     <h1 id="article-title">{{ d.title }} </h1>

@@ -1,8 +1,8 @@
 #all-posts-articles
 {
     display: grid;
-    grid-template-columns: repeat(2, 900px 400px);
-    margin-right: 20px;
+    grid-template-columns: repeat(2, 800px 400px);
+    margin-right: 18px;
     margin-left: 20px;
     
 }
@@ -36,6 +36,7 @@
 .media-description p{
     font-size: 14px;
 }
+
 
 .media-description .space
 {
@@ -122,8 +123,8 @@
 
 .link-catego
 {
+    height: 25px;
     background: var(--rouge);
-    height: 30px;
     margin-bottom: 4px;
     padding: 8px;
     opacity: 1;
@@ -156,9 +157,9 @@
 @media (max-width: 1009px)
 
 {
-    .link-catego{height: 40px; padding: 2px;}
+    .link-catego{height: 26px; padding: 2px;}
     .ul-catego
     {
-        height: 40px;
+        height: 25px;
     }
 }
