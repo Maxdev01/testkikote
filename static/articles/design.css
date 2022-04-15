@@ -1,7 +1,7 @@
 #all-posts-articles
 {
     display: grid;
-    grid-template-columns: repeat(2, 900px 150px);
+    grid-template-columns: repeat(2, 900px 400px);
     margin-right: 20px;
     margin-left: 20px;
     
@@ -19,6 +19,27 @@
 {
     width: 350px;
     height: 180px;   
+}
+.media-description 
+{
+    height: auto;
+    margin-left: 3px;
+}
+
+.media-description h1 , h2
+{
+    text-align: center;
+    color: white;
+    background: var(--rouge);
+}
+
+.media-description p{
+    font-size: 14px;
+}
+
+.media-description .space
+{
+    margin-left: 8px;
 }
 
 .box-images img

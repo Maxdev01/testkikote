@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% load social_share %}
+{% load creative_tags %}
 
 
 
 {% block header %}
-    <meta property="og:title" content="{{ d.title }}" />
-    <meta property="og:description" content="{{ d.author }}" />
-    <meta property="og:url" content="https://www.kikoteayiti.com/">
     <meta property="og:image" content="{{ d.photho1.url }}" />
+    <meta property="og:title" content="{{ d.title }}" />
+    <meta property="og:description" content="Auteur: {{ d.author }}" />
+    <meta property="og:url" content="https://www.kikoteayiti.com/">
+    
 {% endblock %}
 
 {% block content %}
@@ -20,7 +22,7 @@
                     <small> Publie par : {{ d.publish_by}} </small>
                     <span><span> <i class="fas fa-eye"></i> {{ d.views }}</span>
 
-                     <h4><i class="fa-solid fa-user-check"></i> {{ countip }}</h4>  
+                     <!-- <h4><i class="fa-solid fa-user-check"></i> {{ countip }}</h4>   -->
                      
 
                     <hr>
@@ -40,11 +42,11 @@
                     <br>
 
                     <div class="detail-image">
-                        <img src="{{ d.photho1.url }}" alt="">
+                        <img src="{{ d.photho1.url }}" alt="l'image de l'article">
                     </div>
                     <br>
 
-                    <p id="id-description"> {{ d.body }}</p>
+                    <p id="id-description" class="ma">{{ d.body |markdown }}</p>
                     <hr>
                     <p> {{ d.mail }}</p>
 
@@ -96,32 +98,7 @@
 
             <!-- sa se pou pati adwat lan -->
             <div class="first-arts">
-                <h1>First</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum ex eligendi ducimus iusto
-                     dolorum ut sequi rem. Aspernatur,
-                     labore porro! Sequi, ipsa assumenda odit architecto explicabo commodi deleniti doloremque.
-                </p>
-                <hr>
-                <br>
-
-                <h1>First</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum ex eligendi ducimus iusto
-                     dolorum ut sequi rem. Aspernatur,
-                     labore porro! Sequi, ipsa assumenda odit architecto explicabo commodi deleniti doloremque.
-                </p>
-                <hr>
-                <br>
-
-                <h1>First</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum ex eligendi ducimus iusto
-                     dolorum ut sequi rem. Aspernatur,
-                     labore porro! Sequi, ipsa assumenda odit architecto explicabo commodi deleniti doloremque.
-                </p>
-                <hr>
-                <br>
+                <h1></h1>
 
                 
             </div>

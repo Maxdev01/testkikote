@@ -1,6 +1,9 @@
+from ast import Global
 from builtins import print
 from cgitb import reset
+from email.headerregistry import Address
 from hashlib import algorithms_available
+from socket import AddressInfo
 from unittest import result
 from django.shortcuts import render, redirect , get_object_or_404
 from .models import CreationCategories , Texte , categoriesPost, ArticlePost, Reply, UserIp
@@ -85,8 +88,6 @@ def Allposts(request, catego=None):
         page = request.GET.get('page')
         all = p.get_page(page)
 
-    
-    
         
     context = {'all_articles' : all_articles,  'all_category': all_category, 'all' : all,}
 
@@ -119,41 +120,14 @@ def DetailsArticle(request, id=id):
             c.articles = d
             c.save()
     
-    # fonksyon pou nou we nombre vizite yo
-    def get_ip(request):
-        adress = request.META.get('HTTP_X_FOWARDED_FOR')
-
-        if adress:
-            ip = adress.slit(',')[1].strip()
-
-        else:
-            ip = request.META.get('REMOTE_ADDR')
-            return ip
-    ip = get_ip(request)
-    u = UserIp(user=ip)
-    print(ip)
-
-    result = UserIp.objects.filter(Q(user__icontains=ip))
-
-    if len(result) == 1:
-        print('user exist ')
-        
-
-    
-    elif len(result) > 10:
-        print('user exit more....')
-    else:
-        u.save()
-        print('user is unique')
-    
-    
-
-    countip = UserIp.objects.all().count()
-    
-
     formreply = ReplyForm
+    
+    #fonksyon pou nou we nombre vizite yo
+    
+    
 
-    context = {'d': d, 'formreply': formreply, 'countip': countip }
+
+    context = {'d': d, 'formreply': formreply}
     return render(request, 'article/details.html', context)
 
 

@@ -93,7 +93,7 @@ class Reply(models.Model):
 # Se pou nou ka jwenn IP an 
 
 class UserIp(models.Model):
-    user = models.TextField(default=None)
+    user = models.TextField(blank=True, null=True )
 
     def __str__(self):
         return self.user

@@ -30,7 +30,7 @@ def enskripsyon(request):
             return redirect("firststep")
 
         else:
-            print("kont ou an pa sovgade")
+            print("Votre compte n'est pas sauvegarder")
         
     else:
         form = UserForm()
