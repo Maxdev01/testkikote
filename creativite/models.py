@@ -68,8 +68,11 @@ class ArticlePost(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     slug = models.SlugField(unique_for_date="date_created")
     body = models.TextField()
-    photho1 = models.ImageField(upload_to="image_files")
-    photho2 = models.ImageField(upload_to="image_files", null=True, blank=True)
+    # photho1 = models.ImageField(upload_to="image_files")
+    # photho2 = models.ImageField(upload_to="image_files", null=True, blank=True)
+    photho1 = CloudinaryField("image", null=True, blank=True)
+    photho2 = CloudinaryField("image", null=True, blank=True)
+
     publish_by = models.CharField(max_length=200)
     like = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
