@@ -1,7 +1,9 @@
 from ast import Global
 from builtins import print
 from cgitb import reset
+from datetime import datetime
 from email.headerregistry import Address
+from enum import unique
 from hashlib import algorithms_available
 from socket import AddressInfo
 from unittest import result
@@ -11,6 +13,13 @@ from django.core.paginator import Paginator , EmptyPage
 from django.views.generic import ListView
 from .forms import CommentForm, ReplyForm
 from django.db.models import Q
+from django.http import JsonResponse
+
+from django.utils import timezone
+
+from hitcount.models import HitCount
+
+
 
 
 
@@ -107,12 +116,12 @@ def Allposts(request, catego=None):
 # -- kantite fwa yo we 
 # -- django social share 
 # -- epi tout detay yo 
-
+from datetime import timedelta
 def DetailsArticle(request, id=id):
     d = get_object_or_404(ArticlePost, id=id)
     d.views = d.views + 1
     d.save()
-
+    
     if request.method == 'POST':
         formreply = ReplyForm(request.POST)
         if formreply.is_valid():
@@ -121,15 +130,13 @@ def DetailsArticle(request, id=id):
             c.save()
     
     formreply = ReplyForm
-    
-    #fonksyon pou nou we nombre vizite yo
-    
-    
-
+     
 
     context = {'d': d, 'formreply': formreply}
     return render(request, 'article/details.html', context)
+    
 
+   
 
 
 # class PostDetailView(HitCountDetailView):
@@ -141,3 +148,24 @@ def DetailsArticle(request, id=id):
 
 
 # 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
+
+#  if 'hitcount_data' in request.session:
+#         saved_data = request.session.get('hitcount_data')
+#         now = datetime.datetime.now()
+#         if saved_data.get('expired_at') <= now:
+#             d.views += 1
+#             d.save()
+#     else:
+#         import random
+#         unique_id = random.randrange(38923)
+#         data = {
+#             'id': unique_id,
+#             'expired_at': timezone.datetime.now() + timezone.timedelta(minutes=15),
+#         }
+#         # save it to user session
+#         request.session['hitcount_data'] = data
+#         d.views += 1
+#         d.save()
+#         response.set_cookie("_uid", unique_id)
+#     #fonksyon pou nou we nombre vizite yo
+#     return response

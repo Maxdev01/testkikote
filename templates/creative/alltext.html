@@ -39,6 +39,7 @@
                 </form>
             </div>
 
+            <div class="content-apercu"><i class="fa fa-spinner fa-spin"></i></div>
 
             {% for i in all_posts %}
                     
@@ -107,3 +108,30 @@
      </div>
 
 {% endblock %}
+
+<!-- <script>
+
+    let links = document.querySelectorAll(".cat-link");
+    links.forEach((el) => {
+        el.addEventListener('click', getPosts)
+    });
+
+    function getPosts(event){
+        let slug = event.getAttribute('data-slug');
+
+        let xhr = new XMLHttpRequest()
+
+        xhr.onreadystatechange = function(data) {
+            if (this.readyState == 4 && this.status == 200) {
+                let response = data.responseJson;
+
+
+            }
+        };
+
+
+        xhttp.open("GET", `?cat=${slug}`, true);
+        xhttp.send();
+    }
+    
+</script> -->

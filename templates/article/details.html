@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load social_share %}
 {% load creative_tags %}
-
+{% load hitcount_tags %}
 
 
 {% block header %}
@@ -16,13 +16,15 @@
 
         <br>
 
-        <h4 style="margin-left: 25px;">
-            <span><a href="{% url 'artposts' %}" style="color: var(--rouge);">Liste d'article </a></span>
-            <i class="fas fa-chevron-circle-right"></i>
-            <span>Detail(s) article</span>
-            <i class="fas fa-chevron-circle-right"></i>
-            <span><a href="{% url 'firststep' %}" style="color: var(--rouge);">Page d'Accueil</a></span>
-        </h4>
+        <div class="repert">
+            <h4 style="margin-left: 25px;">
+                <span><a href="{% url 'artposts' %}" style="color: var(--rouge);">Liste d'article </a></span>
+                <i class="fas fa-chevron-circle-right"></i>
+                <span>Detail(s) article</span>
+                <i class="fas fa-chevron-circle-right"></i>
+                <span><a href="{% url 'firststep' %}" style="color: var(--rouge);">Page d'Accueil</a></span>
+            </h4>
+        </div>
         
         <br>
 
@@ -34,7 +36,6 @@
                     <h4> {{ d.author }} | <span> {{ d.date_created|timesince }}</span></h4>
                     <small> Publie par : {{ d.publish_by}} </small>
                     <span><span> <i class="fas fa-eye"></i> {{ d.views }}</span>
-
                      <!-- <h4><i class="fa-solid fa-user-check"></i> {{ countip }}</h4>   -->
                      
 
@@ -50,6 +51,8 @@
                         <span><a href="{{ telegram_url }}"><i class="fab fa-telegram"></i></a></span>
                         <span><a href=" {{ whatsapp_url }} "><i class="fab fa-whatsapp"></i></a></span>
                     </div>
+
+                    
 
                     <hr>
                     <br>
